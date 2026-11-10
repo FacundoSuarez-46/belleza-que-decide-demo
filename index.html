@@ -68,7 +68,7 @@
     overflow:hidden;
     color:var(--fondo);
   }
-  .photo{position:absolute;inset:0;margin:0;overflow:hidden;background:#e6b9b6}
+  .photo{position:absolute;inset:0;margin:0;overflow:hidden;background:var(--rosa-palido)}
   .photo picture{position:absolute;inset:0}
   .photo img,.photo video{
     width:100%;height:100%;object-fit:cover;object-position:50% 38%;
@@ -341,8 +341,8 @@
     </nav>
     <figure class="photo">
       <picture>
-        <source media="(min-width:900px)" srcset="./img/hero-poster-16x9.jpg" width="1280" height="720">
-        <img src="./img/hero-poster-9x16.jpg" alt="Tres mujeres juntas, en un sillón, sobre un fondo rosa" width="720" height="1280" fetchpriority="high">
+        <source media="(min-width:900px)" srcset="./img/hero-poster-16x9.jpg?v=4" width="1280" height="720">
+        <img src="./img/hero-poster-9x16.jpg?v=4" alt="Tres mujeres juntas, en un sillón, sobre un fondo rosa" width="720" height="1280" fetchpriority="high">
       </picture>
       <video class="hero-film" muted loop playsinline preload="none" aria-hidden="true"></video>
     </figure>
@@ -512,7 +512,7 @@
 
       film.setAttribute('webkit-playsinline', '');
       var desktop = window.matchMedia('(min-width: 900px)');
-      function file(){ return desktop.matches ? './img/hero-16x9.mp4' : './img/hero-9x16.mp4'; }
+      function file(){ return desktop.matches ? './img/hero-16x9.mp4?v=4' : './img/hero-9x16.mp4?v=4'; }
       function play(){ var p = film.play(); if (p && p.catch) p.catch(function(){}); }
       function load(){
         var src = file();
