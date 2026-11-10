@@ -62,61 +62,134 @@
   .act:hover .u{background-size:100% 2px}
 
   .hero{
-    display:flex;flex-direction:column;
+    position:relative;
     height:calc(100svh - var(--bar) - env(safe-area-inset-bottom));
-    min-height:34rem;
+    min-height:36rem;
+    overflow:hidden;
+    color:var(--fondo);
   }
-  .photo{position:relative;flex:1;min-height:0;margin:0;overflow:hidden;background:var(--rosa-palido)}
-  .photo img{width:100%;height:122%;object-fit:cover;object-position:50% 18%}
-  .hero-text{container-type:inline-size;padding:1.25rem var(--pad) .75rem}
+  .photo{position:absolute;inset:0;margin:0;overflow:hidden;background:var(--rosa-palido)}
+  .photo img{
+    width:100%;height:100%;object-fit:cover;object-position:50% 16%;
+    transform:scale(1.08);
+    animation:ken 26s ease-out forwards;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(to top, rgba(58,58,60,.82) 0%, rgba(58,58,60,.42) 34%, rgba(58,58,60,.08) 58%, transparent 74%);
+  }
+  .hero-text{
+    position:absolute;left:0;right:0;bottom:0;z-index:2;
+    container-type:inline-size;
+    padding:0 var(--pad) 1.35rem;
+    animation:rise 1.2s ease .2s both;
+  }
   .hero h1{
-    font-weight:400;font-size:min(15.5cqi, 9rem);line-height:.92;letter-spacing:-.035em;
+    color:var(--fondo);
+    font-weight:400;font-size:min(15.5cqi, 5.75rem);line-height:.92;letter-spacing:-.035em;
     font-variation-settings:"opsz" 144;
   }
   .hero h1 span{display:block}
-  .hero h1 .q{display:inline;color:var(--rosa)}
-  .lede-row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-top:.625rem}
+  .hero h1 .q{display:inline;color:var(--rosa-palido)}
+  .lede-row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-top:.7rem}
   .lede{
     font-family:var(--serif);font-style:italic;font-weight:300;
-    font-size:1.5rem;line-height:1.2;color:var(--fuerte);
+    font-size:1.5rem;line-height:1.2;color:var(--fondo);
   }
-  .place{font-size:.6875rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--rosa);white-space:nowrap}
-  .hero-foot{display:flex;justify-content:space-between;align-items:center;gap:0 1rem;flex-wrap:wrap;margin-top:.125rem}
-  .hero-foot small{font-size:.75rem;color:var(--texto);letter-spacing:.04em}
+  .place{font-size:.6875rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--rosa-palido);white-space:nowrap}
+  .hero-foot{display:flex;justify-content:space-between;align-items:center;gap:0 1rem;flex-wrap:wrap;margin-top:.2rem}
+  .hero .act{color:var(--fondo)}
+  .hero-foot small{font-size:.75rem;color:rgba(242,232,230,.78);letter-spacing:.04em}
+
+  .capitulo{
+    position:relative;
+    height:calc(100svh - var(--bar) - env(safe-area-inset-bottom));
+    min-height:32rem;
+    overflow:hidden;
+    color:var(--fondo);
+  }
+  .capitulo figure{position:absolute;inset:0;margin:0}
+  .capitulo img{
+    width:100%;height:100%;object-fit:cover;object-position:50% 28%;
+    transform:scale(1.06);
+    animation:ken-slow 32s ease-out forwards;
+  }
+  .capitulo::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(to top, rgba(58,58,60,.88) 0%, rgba(58,58,60,.45) 38%, rgba(58,58,60,.08) 62%, transparent 78%);
+  }
+  .capitulo-text{
+    position:absolute;left:0;right:0;bottom:0;z-index:2;
+    padding:0 var(--pad) 3.75rem;
+    max-width:28rem;margin:0 auto;
+  }
+  .capitulo .mes{
+    font-size:.6875rem;letter-spacing:.28em;text-transform:uppercase;font-weight:600;color:var(--rosa-palido);
+    margin-bottom:.85rem;
+  }
+  .capitulo h2{
+    color:var(--fondo);font-size:clamp(2.35rem, 9vw, 3.4rem);line-height:1.05;
+    font-style:italic;font-weight:300;letter-spacing:-.03em;margin:0;
+    font-variation-settings:"opsz" 144;
+  }
+  .capitulo h2 em{font-style:italic;color:var(--rosa-palido)}
 
   .sheet{background:var(--superficie)}
   .body{font-size:1.0625rem;color:var(--texto);max-width:32ch}
   .body + .act{margin-top:.5rem}
 
-  .look{padding:5.5rem 0 5rem}
+  .look{padding:4.5rem 0 3.25rem}
   .clase{padding:2.25rem 0 2.25rem;border-top:1px solid var(--rosa-palido)}
-  .productos{padding:3.25rem 0 3.5rem;background:var(--fondo)}
-  .unidad{padding:2.25rem 0 2.5rem}
+  .deseo{background:#f4d8d4}
+  .unidad{padding:2.25rem 0 2.5rem;background:var(--fondo)}
   .notas{padding:4rem 0 3rem}
   .instalar{padding:2rem 0 2.5rem;border-top:1px solid var(--rosa-palido)}
 
-  .cover{margin:1.75rem 0 .5rem;display:flex;gap:1.25rem;align-items:flex-end}
-  .cover a.tapa{
-    display:block;flex:0 0 62%;aspect-ratio:3/4;overflow:hidden;background:var(--rosa-palido);
-    box-shadow:0 1px 2px rgba(58,58,60,.08), 0 18px 40px -18px rgba(58,58,60,.35);
+  .hint{
+    margin:.25rem 0 1.15rem;font-size:.6875rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;
   }
-  .cover a.tapa img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;transform:scale(1.04);transition:transform .6s ease}
-  .cover a.tapa:hover img{transform:scale(1.07)}
-  .cover figcaption{font-size:.6875rem;letter-spacing:.22em;text-transform:uppercase;line-height:1.9;padding-bottom:.25rem}
-  .cover figcaption b{display:block;font-family:var(--serif);font-weight:400;letter-spacing:0;text-transform:none;font-size:1.375rem;color:var(--fuerte);line-height:1.1;margin-top:.25rem}
+
+  .revista{
+    overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+    scrollbar-width:none;margin:1.5rem 0 1.25rem;
+    padding-bottom:.25rem;
+  }
+  .revista::-webkit-scrollbar{display:none}
+  .revista-track{display:flex;gap:.875rem;padding:0 var(--pad);width:max-content}
+  .revista figure{
+    flex:0 0 min(74vw, 19.5rem);margin:0;scroll-snap-align:start;
+    background:var(--rosa-palido);
+    box-shadow:0 1px 2px rgba(58,58,60,.08), 0 22px 44px -20px rgba(58,58,60,.38);
+  }
+  .revista a{display:block;color:inherit;text-decoration:none}
+  .revista img{width:100%;height:auto}
+  .revista figcaption{
+    padding:.7rem .15rem 0;
+    font-size:.6875rem;letter-spacing:.2em;text-transform:uppercase;
+  }
+  .look .col .act{margin-left:0}
 
   .clase h2{margin-bottom:.375rem}
   .clase-row{display:flex;justify-content:space-between;align-items:center;gap:.25rem 1rem;flex-wrap:wrap}
   .clase .when{display:block;font-size:.8125rem;letter-spacing:.04em;color:var(--fuerte);margin-top:.125rem}
 
-  .productos .col{max-width:30rem}
-  .productos h2{margin-bottom:1.25rem}
-  .grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem .875rem}
-  .grid li{display:flex;flex-direction:column}
-  .grid .shot{aspect-ratio:1/1;background:var(--rosa-palido);overflow:hidden}
-  .grid .shot img{width:100%;height:100%;object-fit:cover}
-  .grid .name{font-family:var(--serif);font-size:1.0625rem;color:var(--fuerte);line-height:1.25;margin-top:.625rem;font-variation-settings:"opsz" 36;flex:1}
-  .grid .act{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;min-height:44px}
+  .deseo-grid{display:grid}
+  .deseo-frame{
+    display:grid;place-items:center;
+    min-height:28rem;padding:3rem 2rem 2rem;
+    background:linear-gradient(180deg, #f9ddd9 0%, #f4d8d4 100%);
+  }
+  .deseo-frame img{
+    height:min(54vh, 28rem);width:auto;max-width:72%;
+    object-fit:contain;
+    filter:drop-shadow(0 22px 36px rgba(58,58,60,.16));
+  }
+  .deseo-copy{padding:0 var(--pad) calc(2.5rem + var(--bar));max-width:28rem;margin:0 auto;width:100%}
+  .deseo .folio::after{background:rgba(233,126,164,.35)}
+  .deseo h2{margin-bottom:.5rem}
+  .swatches{list-style:none;margin:1.15rem 0 1.1rem;padding:0;display:flex;gap:1.15rem}
+  .swatches li{display:flex;align-items:center;gap:.45rem;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--fuerte)}
+  .swatches i{width:1.05rem;height:1.05rem;border-radius:50%;display:block;box-shadow:inset 0 0 0 1px rgba(58,58,60,.12)}
 
   .unidad .grupo{margin:0 0 1.25rem;aspect-ratio:16/9;overflow:hidden;background:var(--rosa-palido)}
   .unidad .grupo img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
@@ -168,9 +241,27 @@
   .tabbar a.wa{flex-direction:column;gap:.25rem;color:var(--fuerte);font-weight:600;font-size:.625rem;letter-spacing:.1em}
   .tabbar a.wa svg{width:22px;height:22px;fill:var(--rosa);flex:none}
 
+  html.js .reveal{opacity:0;transform:translateY(22px)}
+  html.js .reveal.is-in{opacity:1;transform:none;transition:opacity .95s ease, transform .95s ease}
+
+  @keyframes ken{
+    from{transform:scale(1.08)}
+    to{transform:scale(1.18) translate3d(0,-2.5%,0)}
+  }
+  @keyframes ken-slow{
+    from{transform:scale(1.06)}
+    to{transform:scale(1.14)}
+  }
+  @keyframes rise{
+    from{opacity:0;transform:translateY(18px)}
+    to{opacity:1;transform:none}
+  }
+
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
-    *{transition:none !important}
+    *,*::before,*::after{transition:none !important;animation:none !important}
+    .photo img,.capitulo img{transform:none}
+    html.js .reveal{opacity:1;transform:none}
   }
 
   section[id]{scroll-margin-top:1rem}
@@ -179,42 +270,45 @@
     :root{--pad:2.5rem}
     .col{max-width:38rem}
 
-    .hero{
-      position:relative;
-      display:grid;grid-template-columns:minmax(0,1fr) minmax(0,min(50vw,46rem));
-      height:100svh;min-height:42rem;
-    }
+    .hero,.capitulo{height:100svh;min-height:42rem}
     .top{
-      display:block;position:absolute;top:0;left:0;z-index:2;
-      grid-column:1;grid-row:1;align-self:start;
+      display:block;position:absolute;top:0;left:0;z-index:3;
       padding:2rem 3rem 0 max(var(--pad), calc((100vw - 72rem) / 2 + var(--pad)));
     }
     .top ul{list-style:none;margin:0;padding:0;display:flex;gap:2rem}
     .top a{
       font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;
-      text-decoration:none;color:var(--fuerte);padding:.75rem 0;display:inline-block;
+      text-decoration:none;color:var(--fondo);padding:.75rem 0;display:inline-block;
     }
-    .top a:hover{color:var(--rosa)}
-    .photo{grid-column:2;grid-row:1}
+    .top a:hover{color:var(--rosa-palido)}
     .hero-text{
-      grid-column:1;grid-row:1;align-self:end;
       padding:0 3rem 3.5rem max(var(--pad), calc((100vw - 72rem) / 2 + var(--pad)));
+      max-width:46rem;
     }
-    .hero h1{font-size:min(15cqi, 9rem)}
-    .lede-row{margin-top:1.25rem}
-    .lede{font-size:clamp(1.75rem, 2.8vw, 2.5rem)}
-    .hero-foot{flex-direction:column;align-items:flex-start;margin-top:1.25rem}
+    .hero h1{font-size:clamp(4.5rem, 8vw, 8.25rem)}
+    .lede-row{margin-top:1.15rem}
+    .lede{font-size:clamp(1.75rem, 2.6vw, 2.35rem)}
+    .hero-foot{margin-top:1rem}
+
+    .capitulo-text{
+      max-width:none;margin:0;
+      padding:0 3rem 4.5rem max(var(--pad), calc((100vw - 72rem) / 2 + var(--pad)));
+    }
+    .capitulo h2{font-size:clamp(3.4rem, 6vw, 5.6rem);max-width:16ch}
 
     h2{font-size:2.75rem}
-    .look{padding:9rem 0 8rem}
+    .look{padding:7.5rem 0 5.5rem}
+    .revista-track{padding:0 max(var(--pad), calc((100vw - 38rem) / 2 + var(--pad)))}
+    .revista figure{flex-basis:22rem}
     .clase{padding:3rem 0}
-    .productos{padding:4.5rem 0 5rem}
-    .productos .col{max-width:60rem}
-    .grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5rem}
+
+    .deseo-grid{grid-template-columns:1fr 1fr;min-height:36rem;align-items:stretch}
+    .deseo-frame{min-height:100%;padding:4rem}
+    .deseo-copy{display:flex;flex-direction:column;justify-content:center;padding:4.5rem 3.5rem;max-width:none}
+
     .unidad{padding:3rem 0}
     .notas{padding:6rem 0 4rem}
     .instalar{padding:3rem 0 4rem}
-    .cover a.tapa{flex-basis:55%}
 
     .tabbar{display:none}
     footer{padding-bottom:5rem}
@@ -229,7 +323,7 @@
       <ul>
         <li><a href="#look">Look</a></li>
         <li><a href="#clase">Clase</a></li>
-        <li><a href="#productos">Productos</a></li>
+        <li><a href="#productos">Este look</a></li>
         <li><a href="#unidad">Unidad</a></li>
       </ul>
     </nav>
@@ -249,23 +343,58 @@
     </div>
   </section>
 
+  <section class="capitulo" id="compania" aria-labelledby="t-cap">
+    <figure>
+      <img src="./img/look-compania.jpg" alt="Tres mujeres juntas, campaña primavera 2026" width="1061" height="1528" loading="lazy">
+    </figure>
+    <div class="capitulo-text">
+      <p class="mes">Primavera · octubre</p>
+      <h2 id="t-cap">La belleza es mejor <em>en compañía.</em></h2>
+    </div>
+  </section>
+
   <div class="sheet">
-    <section class="look" id="look" aria-labelledby="t-look">
+    <section class="look reveal" id="look" aria-labelledby="t-look">
       <div class="col">
         <p class="folio"><span class="n">01</span><span>Look</span></p>
         <h2 id="t-look">El Look de octubre</h2>
         <p class="body">Primavera 2026. El folleto del mes, siempre el último.</p>
-        <figure class="cover">
-          <a class="tapa" href="./look/look-primavera-octubre-2026.pdf" aria-label="Ver el Look de octubre">
-            <img src="./img/look-octubre.jpg" alt="Tapa del catálogo The Look, Primavera 2026" width="1061" height="1528" loading="lazy">
-          </a>
-          <figcaption>Edición<b>Oct · 2026</b></figcaption>
-        </figure>
+        <p class="hint">Deslizá las páginas</p>
+      </div>
+      <div class="revista" role="region" aria-label="Páginas del Look de octubre" tabindex="0">
+        <div class="revista-track">
+          <figure>
+            <a href="./look/look-primavera-octubre-2026.pdf">
+              <img src="./img/look-octubre.jpg" alt="Tapa del catálogo The Look, Primavera 2026" width="1061" height="1528" loading="lazy">
+            </a>
+            <figcaption>Tapa · oct 2026</figcaption>
+          </figure>
+          <figure>
+            <a href="./look/look-primavera-octubre-2026.pdf">
+              <img src="./img/look-compania.jpg" alt="Campaña: tres mujeres en un sillón rosa" width="1061" height="1528" loading="lazy">
+            </a>
+            <figcaption>Compañía</figcaption>
+          </figure>
+          <figure>
+            <a href="./look/look-primavera-octubre-2026.pdf">
+              <img src="./img/look-compartir.jpg" alt="Página Compartí un labial y brillá" width="1061" height="1260" loading="lazy">
+            </a>
+            <figcaption>El labial</figcaption>
+          </figure>
+          <figure>
+            <a href="./look/look-primavera-octubre-2026.pdf">
+              <img src="./img/look-campana.jpg" alt="Campaña Beauty is more beautiful shared" width="1061" height="1450" loading="lazy">
+            </a>
+            <figcaption>Compartir</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="col">
         <a class="act" href="./look/look-primavera-octubre-2026.pdf"><span class="u">Ver el Look</span><span class="arr" aria-hidden="true">→</span></a>
       </div>
     </section>
 
-    <section class="clase" id="clase" aria-labelledby="t-clase">
+    <section class="clase reveal" id="clase" aria-labelledby="t-clase">
       <div class="col">
         <p class="folio"><span class="n">02</span><span>Clase</span></p>
         <h2 id="t-clase">La próxima clase</h2>
@@ -277,19 +406,26 @@
     </section>
   </div>
 
-  <section class="productos" id="productos" aria-labelledby="t-prod">
-    <div class="col">
-      <h2 id="t-prod">Para mirar</h2>
-      <ul class="grid">
-        <li><span class="shot"><img src="./img/limpiador.jpg" alt="" loading="lazy"></span><span class="name">Limpiador facial hidratante</span><a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20pedir%20Limpiador%20facial%20hidratante" target="_blank" rel="noopener" aria-label="Pedir Limpiador facial hidratante por WhatsApp"><span class="u">Pedir</span></a></li>
-        <li><span class="shot"><img src="./img/tonico.jpg" alt="" loading="lazy"></span><span class="name">Tónico balanceador</span><a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20pedir%20T%C3%B3nico%20balanceador" target="_blank" rel="noopener" aria-label="Pedir Tónico balanceador por WhatsApp"><span class="u">Pedir</span></a></li>
-        <li><span class="shot"><img src="./img/crema.jpg" alt="" loading="lazy"></span><span class="name">Crema facial hidratante</span><a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20pedir%20Crema%20facial%20hidratante" target="_blank" rel="noopener" aria-label="Pedir Crema facial hidratante por WhatsApp"><span class="u">Pedir</span></a></li>
-        <li><span class="shot"><img src="./img/oleo.jpg" alt="" loading="lazy"></span><span class="name">Óleo nutritivo hidratante</span><a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20pedir%20%C3%93leo%20nutritivo%20hidratante" target="_blank" rel="noopener" aria-label="Pedir Óleo nutritivo hidratante por WhatsApp"><span class="u">Pedir</span></a></li>
-      </ul>
+  <section class="deseo reveal" id="productos" aria-labelledby="t-prod">
+    <div class="deseo-grid">
+      <figure class="deseo-frame">
+        <img src="./img/deseo.jpg" alt="Labial hidratante del Look de octubre" width="258" height="458" loading="lazy">
+      </figure>
+      <div class="deseo-copy">
+        <p class="folio"><span class="n">03</span><span>Para mirar</span></p>
+        <h2 id="t-prod">Este look</h2>
+        <p class="body">El labial del mes. Te lo armamos por WhatsApp.</p>
+        <ul class="swatches" aria-label="Tonos">
+          <li><i style="background:#c9a394"></i> Nude</li>
+          <li><i style="background:#d07a8c"></i> Rosa</li>
+          <li><i style="background:#9d2032"></i> Rojo</li>
+        </ul>
+        <a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20pedir%20el%20labial%20del%20Look%20de%20octubre." target="_blank" rel="noopener"><span class="u">Pedí este look</span><span class="arr" aria-hidden="true">→</span></a>
+      </div>
     </div>
   </section>
 
-  <section class="unidad" id="unidad" aria-labelledby="t-unidad">
+  <section class="unidad reveal" id="unidad" aria-labelledby="t-unidad">
     <div class="col">
       <figure class="grupo">
         <img src="./img/clase.jpg" alt="Dos mujeres compartiendo un labial" width="1152" height="864" loading="lazy">
@@ -301,7 +437,7 @@
   </section>
 
   <div class="sheet">
-    <section class="notas" id="notas" aria-labelledby="t-notas">
+    <section class="notas reveal" id="notas" aria-labelledby="t-notas">
       <div class="col">
         <p class="folio"><span id="t-notas">Notas</span></p>
         <div class="notes">
@@ -350,6 +486,8 @@
 
 <script>
   (function(){
+    document.documentElement.classList.add('js');
+
     var tabs = document.querySelectorAll('.tabbar a[data-t]');
     var ids = ['inicio','look','clase'];
     function setActive(){
@@ -359,7 +497,7 @@
         if (el && el.getBoundingClientRect().top <= mid) current = id;
       });
       var clase = document.getElementById('clase');
-      if (clase.getBoundingClientRect().bottom < mid) current = null;
+      if (clase && clase.getBoundingClientRect().bottom < mid) current = null;
       tabs.forEach(function(a){
         if (a.dataset.t === current) a.setAttribute('aria-current','true');
         else a.removeAttribute('aria-current');
@@ -367,6 +505,24 @@
     }
     setActive();
     window.addEventListener('scroll', setActive, {passive:true});
+
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, {threshold:0.14, rootMargin:'0px 0px -8% 0px'});
+      document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+    } else {
+      document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('is-in'); });
+    }
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js');
+    }
 
     var seccion = document.getElementById('instalar');
     var boton = document.getElementById('btn-instalar');
@@ -409,10 +565,6 @@
     hoja.addEventListener('click', function(e){
       if (e.target === hoja) hoja.close();
     });
-
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js');
-    }
   })();
 </script>
 </body>
