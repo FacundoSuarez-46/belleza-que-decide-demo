@@ -1,0 +1,19 @@
+{
+  "name": "Belleza que Decide",
+  "short_name": "Belleza",
+  "description": "Look, clase y unidad. Young, Río Negro.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f2e8e6",
+  "theme_color": "#f2e8e6",
+  "lang": "es-UY",
+  "icons": [
+    {
+      "src": "./apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

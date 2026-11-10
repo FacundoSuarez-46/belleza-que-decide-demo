@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f2e8e6">
+<title>Belleza que Decide · Young</title>
+<meta name="description" content="Belleza que Decide. Directora de belleza en Young, Río Negro. Mujeres que deciden.">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --fondo:#f2e8e6;
+    --superficie:#ffffff;
+    --rosa:#e97ea4;
+    --rosa-palido:#f9ddd9;
+    --texto:#68696b;
+    --fuerte:#3a3a3c;
+    --serif:"Fraunces", Georgia, "Times New Roman", serif;
+    --sans:"Manrope", system-ui, sans-serif;
+    --pad:1.25rem;
+    --bar:64px;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--fondo);color:var(--texto);
+    font-family:var(--sans);font-size:1rem;line-height:1.6;
+    overflow-x:clip;
+  }
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  :focus-visible{outline:2px solid var(--rosa);outline-offset:3px}
+
+  .top{display:none}
+  .col{max-width:28rem;margin:0 auto;padding:0 var(--pad)}
+
+  .folio{
+    display:flex;align-items:baseline;gap:.75rem;margin:0 0 1rem;
+    font-size:.6875rem;letter-spacing:.24em;text-transform:uppercase;color:var(--texto);font-weight:500;
+  }
+  .folio .n{font-family:var(--serif);letter-spacing:0;font-size:.9375rem;color:var(--rosa);font-weight:400}
+  .folio::after{content:"";flex:1;height:1px;background:var(--rosa-palido);align-self:center}
+
+  h1,h2,h3{font-family:var(--serif);font-weight:400;font-style:normal;margin:0;letter-spacing:-.015em;color:var(--fuerte)}
+  h2{font-size:2.125rem;line-height:1.1;font-variation-settings:"opsz" 96;margin-bottom:.75rem}
+  h3{font-size:1.25rem;line-height:1.25;font-variation-settings:"opsz" 36}
+  p{margin:0}
+
+  .act{
+    display:inline-flex;align-items:center;gap:.6rem;min-height:48px;
+    font:600 .9375rem/1 var(--sans);color:var(--fuerte);text-decoration:none;letter-spacing:.01em;
+    background:none;border:0;padding:0;cursor:pointer;
+  }
+  .act .u{background-image:linear-gradient(var(--rosa),var(--rosa));background-size:100% 1px;background-position:0 100%;background-repeat:no-repeat;padding-bottom:3px;transition:background-size .3s ease}
+  .act .arr{color:var(--rosa);transition:transform .3s ease}
+  .act:hover .arr{transform:translateX(3px)}
+  .act:hover .u{background-size:100% 2px}
+
+  .hero{
+    display:flex;flex-direction:column;
+    height:calc(100svh - var(--bar) - env(safe-area-inset-bottom));
+    min-height:34rem;
+  }
+  .photo{position:relative;flex:1;min-height:0;margin:0;overflow:hidden;background:var(--rosa-palido)}
+  .photo img{width:100%;height:122%;object-fit:cover;object-position:50% 18%}
+  .hero-text{container-type:inline-size;padding:1.25rem var(--pad) .75rem}
+  .hero h1{
+    font-weight:400;font-size:min(15.5cqi, 9rem);line-height:.92;letter-spacing:-.035em;
+    font-variation-settings:"opsz" 144;
+  }
+  .hero h1 span{display:block}
+  .hero h1 .q{display:inline;color:var(--rosa)}
+  .lede-row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-top:.625rem}
+  .lede{
+    font-family:var(--serif);font-style:italic;font-weight:300;
+    font-size:1.5rem;line-height:1.2;color:var(--fuerte);
+  }
+  .place{font-size:.6875rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--rosa);white-space:nowrap}
+  .hero-foot{display:flex;justify-content:space-between;align-items:center;gap:0 1rem;flex-wrap:wrap;margin-top:.125rem}
+  .hero-foot small{font-size:.75rem;color:var(--texto);letter-spacing:.04em}
+
+  .sheet{background:var(--superficie)}
+  .body{font-size:1.0625rem;color:var(--texto);max-width:32ch}
+  .body + .act{margin-top:.5rem}
+
+  .look{padding:5.5rem 0 5rem}
+  .clase{padding:2.25rem 0 2.25rem;border-top:1px solid var(--rosa-palido)}
+  .productos{padding:3.25rem 0 3.5rem;background:var(--fondo)}
+  .unidad{padding:2.25rem 0 2.5rem}
+  .notas{padding:4rem 0 3rem}
+  .instalar{padding:2rem 0 2.5rem;border-top:1px solid var(--rosa-palido)}
+
+  .cover{margin:1.75rem 0 .5rem;display:flex;gap:1.25rem;align-items:flex-end}
+  .cover a.tapa{
+    display:block;flex:0 0 62%;aspect-ratio:3/4;overflow:hidden;background:var(--rosa-palido);
+    box-shadow:0 1px 2px rgba(58,58,60,.08), 0 18px 40px -18px rgba(58,58,60,.35);
+  }
+  .cover a.tapa img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;transform:scale(1.04);transition:transform .6s ease}
+  .cover a.tapa:hover img{transform:scale(1.07)}
+  .cover figcaption{font-size:.6875rem;letter-spacing:.22em;text-transform:uppercase;line-height:1.9;padding-bottom:.25rem}
+  .cover figcaption b{display:block;font-family:var(--serif);font-weight:400;letter-spacing:0;text-transform:none;font-size:1.375rem;color:var(--fuerte);line-height:1.1;margin-top:.25rem}
+
+  .clase h2{margin-bottom:.375rem}
+  .clase-row{display:flex;justify-content:space-between;align-items:center;gap:.25rem 1rem;flex-wrap:wrap}
+  .clase .when{display:block;font-size:.8125rem;letter-spacing:.04em;color:var(--fuerte);margin-top:.125rem}
+
+  .productos .col{max-width:30rem}
+  .productos h2{margin-bottom:1.25rem}
+  .grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem .875rem}
+  .grid li{display:flex;flex-direction:column}
+  .grid .shot{aspect-ratio:1/1;background:var(--rosa-palido);overflow:hidden}
+  .grid .shot img{width:100%;height:100%;object-fit:cover}
+  .grid .name{font-family:var(--serif);font-size:1.0625rem;color:var(--fuerte);line-height:1.25;margin-top:.625rem;font-variation-settings:"opsz" 36;flex:1}
+  .grid .act{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;min-height:44px}
+
+  .unidad .grupo{margin:0 0 1.25rem;aspect-ratio:16/9;overflow:hidden;background:var(--rosa-palido)}
+  .unidad .grupo img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+  .unidad h2{margin-bottom:.375rem}
+  .unidad h2 .q{color:var(--rosa)}
+
+  .notes{display:grid;gap:1.75rem}
+  .note h3{margin-bottom:.375rem}
+  .note p{max-width:32ch}
+  .note + .note{padding-top:1.75rem;border-top:1px solid var(--rosa-palido)}
+
+  .inst-row{display:flex;justify-content:space-between;align-items:center;gap:.25rem 1.25rem;flex-wrap:wrap}
+  .inst-row p{font-family:var(--serif);font-size:1.125rem;line-height:1.35;color:var(--fuerte);max-width:26ch}
+  .instalar[hidden]{display:none}
+
+  .hoja{
+    position:fixed;inset:auto 0 0 0;margin:0 auto;width:min(100%,28rem);max-width:100%;
+    border:0;padding:1.5rem var(--pad) calc(1rem + env(safe-area-inset-bottom));
+    background:var(--superficie);color:var(--fuerte);
+    box-shadow:0 -12px 40px -12px rgba(58,58,60,.3);
+  }
+  .hoja::backdrop{background:rgba(58,58,60,.35)}
+  .hoja-t{font-family:var(--serif);font-size:1.25rem;line-height:1.35}
+  .hoja-t .sep{color:var(--rosa);padding:0 .25rem}
+  .hoja form{margin-top:.75rem;display:flex;justify-content:flex-end}
+
+  footer{padding:3.5rem 0 calc(3rem + var(--bar) + env(safe-area-inset-bottom));background:var(--fondo)}
+  footer .kicker{font-size:.6875rem;letter-spacing:.24em;text-transform:uppercase;font-weight:500}
+  footer .wm{font-family:var(--serif);font-style:normal;font-weight:400;font-size:2.25rem;color:var(--fuerte);line-height:1.05;letter-spacing:-.02em;margin:.75rem 0 1.25rem;font-variation-settings:"opsz" 144}
+  footer .wm .q{color:var(--rosa)}
+  footer a.ig{font-size:.9375rem;text-decoration:none;color:var(--fuerte);display:inline-flex;min-height:44px;align-items:center;border-bottom:1px solid var(--rosa)}
+
+  .tabbar{
+    position:fixed;inset:auto 0 0 0;z-index:20;background:var(--superficie);
+    border-top:1px solid var(--rosa-palido);
+    padding-bottom:env(safe-area-inset-bottom);
+  }
+  .tabbar ul{list-style:none;margin:0;padding:0 .5rem;display:grid;grid-template-columns:repeat(4,1fr);height:var(--bar)}
+  .tabbar a{
+    position:relative;display:flex;align-items:center;justify-content:center;height:100%;
+    font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--texto);
+  }
+  .tabbar a::before{
+    content:"";position:absolute;top:-1px;left:28%;right:28%;height:2px;background:var(--rosa);
+    transform:scaleX(0);transition:transform .35s ease;
+  }
+  .tabbar a[aria-current="true"]{color:var(--fuerte);font-weight:600}
+  .tabbar a[aria-current="true"]::before{transform:scaleX(1)}
+  .tabbar a.wa{flex-direction:column;gap:.25rem;color:var(--fuerte);font-weight:600;font-size:.625rem;letter-spacing:.1em}
+  .tabbar a.wa svg{width:22px;height:22px;fill:var(--rosa);flex:none}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{transition:none !important}
+  }
+
+  section[id]{scroll-margin-top:1rem}
+
+  @media (min-width:900px){
+    :root{--pad:2.5rem}
+    .col{max-width:38rem}
+
+    .hero{
+      position:relative;
+      display:grid;grid-template-columns:minmax(0,1fr) minmax(0,min(50vw,46rem));
+      height:100svh;min-height:42rem;
+    }
+    .top{
+      display:block;position:absolute;top:0;left:0;z-index:2;
+      grid-column:1;grid-row:1;align-self:start;
+      padding:2rem 3rem 0 max(var(--pad), calc((100vw - 72rem) / 2 + var(--pad)));
+    }
+    .top ul{list-style:none;margin:0;padding:0;display:flex;gap:2rem}
+    .top a{
+      font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;
+      text-decoration:none;color:var(--fuerte);padding:.75rem 0;display:inline-block;
+    }
+    .top a:hover{color:var(--rosa)}
+    .photo{grid-column:2;grid-row:1}
+    .hero-text{
+      grid-column:1;grid-row:1;align-self:end;
+      padding:0 3rem 3.5rem max(var(--pad), calc((100vw - 72rem) / 2 + var(--pad)));
+    }
+    .hero h1{font-size:min(15cqi, 9rem)}
+    .lede-row{margin-top:1.25rem}
+    .lede{font-size:clamp(1.75rem, 2.8vw, 2.5rem)}
+    .hero-foot{flex-direction:column;align-items:flex-start;margin-top:1.25rem}
+
+    h2{font-size:2.75rem}
+    .look{padding:9rem 0 8rem}
+    .clase{padding:3rem 0}
+    .productos{padding:4.5rem 0 5rem}
+    .productos .col{max-width:60rem}
+    .grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5rem}
+    .unidad{padding:3rem 0}
+    .notas{padding:6rem 0 4rem}
+    .instalar{padding:3rem 0 4rem}
+    .cover a.tapa{flex-basis:55%}
+
+    .tabbar{display:none}
+    footer{padding-bottom:5rem}
+  }
+</style>
+</head>
+<body>
+
+<main>
+  <section class="hero" id="inicio" aria-labelledby="t-hero">
+    <nav class="top" aria-label="Secciones">
+      <ul>
+        <li><a href="#look">Look</a></li>
+        <li><a href="#clase">Clase</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#unidad">Unidad</a></li>
+      </ul>
+    </nav>
+    <figure class="photo">
+      <img src="./img/hero.jpg" alt="Tres mujeres juntas, en un sillón, sobre un fondo rosa" width="864" height="1152" fetchpriority="high">
+    </figure>
+    <div class="hero-text">
+      <h1 id="t-hero"><span>Belleza</span><span><span class="q">que</span> Decide</span></h1>
+      <div class="lede-row">
+        <p class="lede">Mujeres que deciden.</p>
+        <span class="place">Young</span>
+      </div>
+      <div class="hero-foot">
+        <a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20%C2%BFc%C3%B3mo%20est%C3%A1s%3F" target="_blank" rel="noopener"><span class="u">Escribirle</span><span class="arr" aria-hidden="true">→</span></a>
+        <small>Directora de belleza · Río Negro</small>
+      </div>
+    </div>
+  </section>
+
+  <div class="sheet">
+    <section class="look" id="look" aria-labelledby="t-look">
+      <div class="col">
+        <p class="folio"><span class="n">01</span><span>Look</span></p>
+        <h2 id="t-look">El Look de octubre</h2>
+        <p class="body">Primavera 2026. El folleto del mes, siempre el último.</p>
+        <figure class="cover">
+          <a class="tapa" href="./look/look-primavera-octubre-2026.pdf" aria-label="Ver el Look de octubre">
+            <img src="./img/look-octubre.jpg" alt="Tapa del catálogo The Look, Primavera 2026" width="1061" height="1528" loading="lazy">
+          </a>
+          <figcaption>Edición<b>Oct · 2026</b></figcaption>
+        </figure>
+        <a class="act" href="./look/look-primavera-octubre-2026.pdf"><span class="u">Ver el Look</span><span class="arr" aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section class="clase" id="clase" aria-labelledby="t-clase">
+      <div class="col">
+        <p class="folio"><span class="n">02</span><span>Clase</span></p>
+        <h2 id="t-clase">La próxima clase</h2>
+        <div class="clase-row">
+          <p class="body">Un rato juntas en Young. Cupo de 4 a 6.<span class="when">Fecha a confirmar</span></p>
+          <a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20anotarme%20a%20la%20pr%C3%B3xima%20clase%20en%20Young." target="_blank" rel="noopener"><span class="u">Anotarme</span><span class="arr" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="productos" id="productos" aria-labelledby="t-prod">
+    <div class="col">
+      <h2 id="t-prod">Para mirar</h2>
+      <ul class="grid">
+        <li><span class="shot"><img src="./img/limpiador.jpg" alt="" loading="lazy"></span><span class="name">Limpiador facial hidratante</span><a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20pedir%20Limpiador%20facial%20hidratante" target="_blank" rel="noopener" aria-label="Pedir Limpiador facial hidratante por WhatsApp"><span class="u">Pedir</span></a></li>
+        <li><span class="shot"><img src="./img/tonico.jpg" alt="" loading="lazy"></span><span class="name">Tónico balanceador</span><a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20pedir%20T%C3%B3nico%20balanceador" target="_blank" rel="noopener" aria-label="Pedir Tónico balanceador por WhatsApp"><span class="u">Pedir</span></a></li>
+        <li><span class="shot"><img src="./img/crema.jpg" alt="" loading="lazy"></span><span class="name">Crema facial hidratante</span><a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20pedir%20Crema%20facial%20hidratante" target="_blank" rel="noopener" aria-label="Pedir Crema facial hidratante por WhatsApp"><span class="u">Pedir</span></a></li>
+        <li><span class="shot"><img src="./img/oleo.jpg" alt="" loading="lazy"></span><span class="name">Óleo nutritivo hidratante</span><a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20pedir%20%C3%93leo%20nutritivo%20hidratante" target="_blank" rel="noopener" aria-label="Pedir Óleo nutritivo hidratante por WhatsApp"><span class="u">Pedir</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="unidad" id="unidad" aria-labelledby="t-unidad">
+    <div class="col">
+      <figure class="grupo">
+        <img src="./img/clase.jpg" alt="Dos mujeres compartiendo un labial" width="1152" height="864" loading="lazy">
+      </figure>
+      <h2 id="t-unidad">La <span class="q">unidad</span></h2>
+      <p class="body">Unidad Energía. Si querés sumarte a vender, escribinos.</p>
+      <a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20saber%20c%C3%B3mo%20sumarme%20a%20la%20unidad." target="_blank" rel="noopener"><span class="u">Quiero sumarme</span><span class="arr" aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <div class="sheet">
+    <section class="notas" id="notas" aria-labelledby="t-notas">
+      <div class="col">
+        <p class="folio"><span id="t-notas">Notas</span></p>
+        <div class="notes">
+          <article class="note">
+            <h3>La rutina, en cuatro pasos</h3>
+            <p>Limpiar, tonificar, hidratar. Y el óleo al final.</p>
+          </article>
+          <article class="note">
+            <h3>Un rato juntas</h3>
+            <p>La clase es para probarse el Look, no para apurarse.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="instalar" id="instalar" aria-label="Instalar en el teléfono">
+      <div class="col inst-row">
+        <p>Si la dejás en el inicio, te avisamos cuando salga el Look.</p>
+        <button class="act" type="button" id="btn-instalar"><span class="u">Instalar</span><span class="arr" aria-hidden="true">→</span></button>
+      </div>
+    </section>
+  </div>
+</main>
+
+<dialog class="hoja" id="hoja" aria-labelledby="hoja-t">
+  <p class="hoja-t" id="hoja-t">Safari<span class="sep" aria-hidden="true">→</span>Compartir<span class="sep" aria-hidden="true">→</span>Agregar a inicio</p>
+  <form method="dialog"><button class="act" type="submit"><span class="u">Listo</span></button></form>
+</dialog>
+
+<footer>
+  <div class="col">
+    <p class="kicker">Young · Río Negro</p>
+    <p class="wm">Belleza <span class="q">que</span> Decide</p>
+    <a class="ig" href="https://instagram.com/silviag_marykay" target="_blank" rel="noopener">Instagram · silviag_marykay</a>
+  </div>
+</footer>
+
+<nav class="tabbar" aria-label="Accesos rápidos">
+  <ul>
+    <li><a href="#inicio" data-t="inicio" aria-current="true">Inicio</a></li>
+    <li><a href="#look" data-t="look">Look</a></li>
+    <li><a href="#clase" data-t="clase">Clase</a></li>
+    <li><a class="wa" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20%C2%BFc%C3%B3mo%20est%C3%A1s%3F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg><span>WhatsApp</span></a></li>
+  </ul>
+</nav>
+
+<script>
+  (function(){
+    var tabs = document.querySelectorAll('.tabbar a[data-t]');
+    var ids = ['inicio','look','clase'];
+    function setActive(){
+      var mid = window.innerHeight * 0.4, current = 'inicio';
+      ids.forEach(function(id){
+        var el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= mid) current = id;
+      });
+      var clase = document.getElementById('clase');
+      if (clase.getBoundingClientRect().bottom < mid) current = null;
+      tabs.forEach(function(a){
+        if (a.dataset.t === current) a.setAttribute('aria-current','true');
+        else a.removeAttribute('aria-current');
+      });
+    }
+    setActive();
+    window.addEventListener('scroll', setActive, {passive:true});
+
+    var seccion = document.getElementById('instalar');
+    var boton = document.getElementById('btn-instalar');
+    var hoja = document.getElementById('hoja');
+    var hojaTexto = document.getElementById('hoja-t');
+    var aviso = null;
+
+    var standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+    if (standalone) { seccion.hidden = true; return; }
+
+    var esIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+    window.addEventListener('beforeinstallprompt', function(e){
+      e.preventDefault();
+      aviso = e;
+    });
+    window.addEventListener('appinstalled', function(){
+      aviso = null;
+      seccion.hidden = true;
+    });
+
+    function abrirHoja(pasos){
+      var sep = '<span class="sep" aria-hidden="true">→</span>';
+      hojaTexto.innerHTML = pasos.join(sep);
+      if (typeof hoja.showModal === 'function') hoja.showModal();
+      else hoja.setAttribute('open','');
+    }
+
+    boton.addEventListener('click', function(){
+      if (aviso) {
+        aviso.prompt();
+        aviso.userChoice.finally(function(){ aviso = null; });
+        return;
+      }
+      if (esIOS) abrirHoja(['Safari','Compartir','Agregar a inicio']);
+      else abrirHoja(['Chrome','Menú','Instalar app']);
+    });
+
+    hoja.addEventListener('click', function(e){
+      if (e.target === hoja) hoja.close();
+    });
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js');
+    }
+  })();
+</script>
+</body>
+</html>
