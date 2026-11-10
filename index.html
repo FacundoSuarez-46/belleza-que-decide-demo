@@ -68,12 +68,22 @@
     overflow:hidden;
     color:var(--fondo);
   }
-  .photo{position:absolute;inset:0;margin:0;overflow:hidden;background:var(--rosa-palido)}
+  .photo{position:absolute;inset:0;margin:0;overflow:hidden;background:#e6b9b6}
+  .photo picture{position:absolute;inset:0}
+  .photo img,.photo video{
+    width:100%;height:100%;object-fit:cover;object-position:50% 38%;
+    display:block;
+  }
   .photo img{
-    width:100%;height:100%;object-fit:cover;object-position:50% 16%;
-    transform:scale(1.08);
+    transform:scale(1.06);
     animation:ken 26s ease-out forwards;
   }
+  .photo video{
+    position:absolute;inset:0;
+    opacity:0;pointer-events:none;
+  }
+  .photo.is-live video{opacity:1;transition:opacity 1.15s ease}
+  .photo.is-live img{animation:none}
   .hero::after{
     content:"";position:absolute;inset:0;pointer-events:none;
     background:linear-gradient(to top, rgba(58,58,60,.82) 0%, rgba(58,58,60,.42) 34%, rgba(58,58,60,.08) 58%, transparent 74%);
@@ -260,7 +270,8 @@
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
     *,*::before,*::after{transition:none !important;animation:none !important}
-    .photo img,.capitulo img{transform:none}
+    .photo img,.capitulo img{transform:none;animation:none}
+    .photo video{display:none}
     html.js .reveal{opacity:1;transform:none}
   }
 
@@ -281,6 +292,7 @@
       text-decoration:none;color:var(--fondo);padding:.75rem 0;display:inline-block;
     }
     .top a:hover{color:var(--rosa-palido)}
+    .photo img,.photo video{object-position:50% 46%}
     .hero-text{
       padding:0 3rem 3.5rem max(var(--pad), calc((100vw - 72rem) / 2 + var(--pad)));
       max-width:46rem;
@@ -328,7 +340,11 @@
       </ul>
     </nav>
     <figure class="photo">
-      <img src="./img/hero.jpg" alt="Tres mujeres juntas, en un sillón, sobre un fondo rosa" width="864" height="1152" fetchpriority="high">
+      <picture>
+        <source media="(min-width:900px)" srcset="./img/hero-poster-16x9.jpg" width="1280" height="720">
+        <img src="./img/hero-poster-9x16.jpg" alt="Tres mujeres juntas, en un sillón, sobre un fondo rosa" width="720" height="1280" fetchpriority="high">
+      </picture>
+      <video class="hero-film" muted loop playsinline preload="none" aria-hidden="true"></video>
     </figure>
     <div class="hero-text">
       <h1 id="t-hero"><span>Belleza</span><span><span class="q">que</span> Decide</span></h1>
@@ -487,6 +503,42 @@
 <script>
   (function(){
     document.documentElement.classList.add('js');
+
+    (function heroFilm(){
+      var photo = document.querySelector('.photo');
+      var film = document.querySelector('.hero-film');
+      if (!photo || !film) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      film.setAttribute('webkit-playsinline', '');
+      var desktop = window.matchMedia('(min-width: 900px)');
+      function file(){ return desktop.matches ? './img/hero-16x9.mp4' : './img/hero-9x16.mp4'; }
+      function play(){ var p = film.play(); if (p && p.catch) p.catch(function(){}); }
+      function load(){
+        var src = file();
+        if (film.getAttribute('data-src') === src) return;
+        film.setAttribute('data-src', src);
+        photo.classList.remove('is-live');
+        film.src = src;
+        film.load();
+      }
+
+      film.addEventListener('playing', function(){ photo.classList.add('is-live'); });
+
+      var vis = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (entry.isIntersecting) { load(); play(); }
+          else film.pause();
+        });
+      }, {threshold: 0.18});
+      vis.observe(photo);
+
+      document.addEventListener('visibilitychange', function(){
+        if (document.hidden) film.pause();
+        else if (film.getAttribute('data-src')) play();
+      });
+      if (desktop.addEventListener) desktop.addEventListener('change', function(){ load(); play(); });
+    })();
 
     var tabs = document.querySelectorAll('.tabbar a[data-t]');
     var ids = ['inicio','look','clase'];
