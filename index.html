@@ -36,8 +36,43 @@
   img{max-width:100%;display:block}
   :focus-visible{outline:2px solid var(--rosa);outline-offset:3px}
 
-  .top{display:none}
   .col{max-width:28rem;margin:0 auto;padding:0 var(--pad)}
+
+  .mast{
+    --mast: 3.5rem;
+    position:sticky;top:0;z-index:30;
+    display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+    height:calc(var(--mast) + env(safe-area-inset-top));
+    padding:env(safe-area-inset-top) var(--pad) 0;
+    background:var(--superficie);
+  }
+  .mast-mark{
+    grid-column:2;justify-self:center;
+    display:inline-flex;align-items:baseline;gap:.22em;
+    font-family:var(--serif);font-weight:400;font-size:1.18rem;line-height:1;
+    letter-spacing:.005em;color:var(--fuerte);text-decoration:none;
+    font-variation-settings:"opsz" 48;white-space:nowrap;
+  }
+  .mast-mark .wm-q{
+    position:relative;top:-.04em;
+    font-style:italic;font-weight:300;font-size:.78em;
+    color:var(--rosa);letter-spacing:.04em;
+    font-variation-settings:"opsz" 14;
+    padding:0 .02em .14em;
+  }
+  .mast-mark .wm-q::after{
+    content:"";position:absolute;left:2%;right:2%;bottom:0;
+    height:1.5px;background:var(--rosa);border-radius:1px;
+  }
+  .mast-side{display:none}
+  .mast-side ul{list-style:none;margin:0;padding:0;display:flex;gap:1.75rem;align-items:center}
+  .mast-side a{
+    font-size:.6875rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;
+    text-decoration:none;color:var(--fuerte);padding:.75rem 0;
+  }
+  .mast-side a:hover{opacity:.55}
+  .mast-left{grid-column:1}
+  .mast-right{grid-column:3;justify-self:end}
 
   .folio{
     display:flex;align-items:baseline;gap:.75rem;margin:0 0 1rem;
@@ -63,8 +98,8 @@
 
   .hero{
     position:relative;
-    height:calc(100svh - var(--bar) - env(safe-area-inset-bottom));
-    min-height:36rem;
+    height:calc(100svh - 3.5rem - var(--bar) - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    min-height:28rem;
     overflow:hidden;
     color:var(--fondo);
   }
@@ -86,30 +121,33 @@
   .photo.is-live img{animation:none}
   .hero::after{
     content:"";position:absolute;inset:0;pointer-events:none;
-    background:linear-gradient(to top, rgba(58,58,60,.82) 0%, rgba(58,58,60,.42) 34%, rgba(58,58,60,.08) 58%, transparent 74%);
+    background:rgba(28,22,22,.28);
   }
   .hero-text{
-    position:absolute;left:0;right:0;bottom:0;z-index:2;
-    container-type:inline-size;
-    padding:0 var(--pad) 1.35rem;
-    animation:rise 1.2s ease .2s both;
+    position:absolute;inset:0;z-index:2;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:0 var(--pad);
+    animation:rise 1.15s ease .18s both;
+  }
+  .hero-kicker{
+    margin:0 0 1rem;
+    font-size:.8125rem;font-weight:400;letter-spacing:.04em;
+    color:rgba(255,255,255,.92);
   }
   .hero h1{
-    color:var(--fondo);
-    font-weight:400;font-size:min(15.5cqi, 5.75rem);line-height:.92;letter-spacing:-.035em;
+    color:#fff;font-weight:400;font-style:normal;
+    font-size:clamp(2.2rem, 8.4vw, 3.15rem);line-height:1.12;
+    letter-spacing:-.025em;max-width:12ch;
     font-variation-settings:"opsz" 144;
   }
-  .hero h1 span{display:block}
-  .hero h1 .q{display:inline;color:var(--rosa-palido)}
-  .lede-row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-top:.7rem}
-  .lede{
-    font-family:var(--serif);font-style:italic;font-weight:300;
-    font-size:1.5rem;line-height:1.2;color:var(--fondo);
+  .descubrir{
+    margin-top:1.35rem;padding-bottom:.32rem;
+    font:500 .875rem/1 var(--sans);letter-spacing:.02em;
+    color:#fff;text-decoration:none;
+    background-image:linear-gradient(#fff,#fff);background-size:100% 1px;
+    background-position:0 100%;background-repeat:no-repeat;
   }
-  .place{font-size:.6875rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--rosa-palido);white-space:nowrap}
-  .hero-foot{display:flex;justify-content:space-between;align-items:center;gap:0 1rem;flex-wrap:wrap;margin-top:.2rem}
-  .hero .act{color:var(--fondo)}
-  .hero-foot small{font-size:.75rem;color:rgba(242,232,230,.78);letter-spacing:.04em}
+  .descubrir:hover{opacity:.72}
 
   .capitulo{
     position:relative;
@@ -228,8 +266,9 @@
 
   footer{padding:3.5rem 0 calc(3rem + var(--bar) + env(safe-area-inset-bottom));background:var(--fondo)}
   footer .kicker{font-size:.6875rem;letter-spacing:.24em;text-transform:uppercase;font-weight:500}
-  footer .wm{font-family:var(--serif);font-style:normal;font-weight:400;font-size:2.25rem;color:var(--fuerte);line-height:1.05;letter-spacing:-.02em;margin:.75rem 0 1.25rem;font-variation-settings:"opsz" 144}
-  footer .wm .q{color:var(--rosa)}
+  footer .wm{display:flex;align-items:baseline;gap:.28em;flex-wrap:wrap;font-family:var(--serif);font-style:normal;font-weight:400;font-size:2.25rem;color:var(--fuerte);line-height:1.05;letter-spacing:-.02em;margin:.75rem 0 1.25rem;font-variation-settings:"opsz" 144}
+  footer .wm .wm-q{position:relative;top:-.04em;font-style:italic;font-weight:300;font-size:.78em;color:var(--rosa);letter-spacing:.04em;padding:0 .02em .14em}
+  footer .wm .wm-q::after{content:"";position:absolute;left:2%;right:2%;bottom:0;height:1.5px;background:var(--rosa);border-radius:1px}
   footer a.ig{font-size:.9375rem;text-decoration:none;color:var(--fuerte);display:inline-flex;min-height:44px;align-items:center;border-bottom:1px solid var(--rosa)}
 
   .tabbar{
@@ -275,32 +314,25 @@
     html.js .reveal{opacity:1;transform:none}
   }
 
-  section[id]{scroll-margin-top:1rem}
+  section[id]{scroll-margin-top:calc(3.5rem + env(safe-area-inset-top) + .5rem)}
 
   @media (min-width:900px){
     :root{--pad:2.5rem}
     .col{max-width:38rem}
 
-    .hero,.capitulo{height:100svh;min-height:42rem}
-    .top{
-      display:block;position:absolute;top:0;left:0;z-index:3;
-      padding:2rem 3rem 0 max(var(--pad), calc((100vw - 72rem) / 2 + var(--pad)));
+    .hero{height:calc(100svh - 4rem);min-height:38rem}
+    .capitulo{height:100svh;min-height:42rem}
+    .mast{
+      --mast:4rem;
+      height:4rem;padding:0 2.5rem;
     }
-    .top ul{list-style:none;margin:0;padding:0;display:flex;gap:2rem}
-    .top a{
-      font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;
-      text-decoration:none;color:var(--fondo);padding:.75rem 0;display:inline-block;
-    }
-    .top a:hover{color:var(--rosa-palido)}
+    .mast-mark{font-size:1.7rem;letter-spacing:.01em;gap:.26em}
+    .mast-mark .wm-q{font-size:.74em}
+    .mast-side{display:block}
     .photo img,.photo video{object-position:50% 46%}
-    .hero-text{
-      padding:0 3rem 3.5rem max(var(--pad), calc((100vw - 72rem) / 2 + var(--pad)));
-      max-width:46rem;
-    }
-    .hero h1{font-size:clamp(4.5rem, 8vw, 8.25rem)}
-    .lede-row{margin-top:1.15rem}
-    .lede{font-size:clamp(1.75rem, 2.6vw, 2.35rem)}
-    .hero-foot{margin-top:1rem}
+    .hero h1{font-size:clamp(3.4rem, 5.2vw, 4.85rem);max-width:14ch}
+    .hero-kicker{font-size:.9375rem;margin-bottom:1.15rem}
+    .descubrir{margin-top:1.6rem;font-size:.9375rem}
 
     .capitulo-text{
       max-width:none;margin:0;
@@ -324,38 +356,42 @@
 
     .tabbar{display:none}
     footer{padding-bottom:5rem}
+    section[id]{scroll-margin-top:4.75rem}
   }
 </style>
 </head>
 <body>
 
+<header class="mast">
+  <nav class="mast-side mast-left" aria-label="Secciones">
+    <ul>
+      <li><a href="#look">Look</a></li>
+      <li><a href="#clase">Clase</a></li>
+      <li><a href="#productos">Este look</a></li>
+    </ul>
+  </nav>
+  <a class="mast-mark" href="#inicio" aria-label="Belleza que Decide"><span>Belleza</span><span class="wm-q">que</span><span>Decide</span></a>
+  <nav class="mast-side mast-right" aria-label="Más">
+    <ul>
+      <li><a href="#unidad">Unidad</a></li>
+      <li><a href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20%C2%BFc%C3%B3mo%20est%C3%A1s%3F" target="_blank" rel="noopener">WhatsApp</a></li>
+    </ul>
+  </nav>
+</header>
+
 <main>
   <section class="hero" id="inicio" aria-labelledby="t-hero">
-    <nav class="top" aria-label="Secciones">
-      <ul>
-        <li><a href="#look">Look</a></li>
-        <li><a href="#clase">Clase</a></li>
-        <li><a href="#productos">Este look</a></li>
-        <li><a href="#unidad">Unidad</a></li>
-      </ul>
-    </nav>
     <figure class="photo">
       <picture>
-        <source media="(min-width:900px)" srcset="./img/hero-poster-16x9.jpg?v=4" width="1280" height="720">
-        <img src="./img/hero-poster-9x16.jpg?v=4" alt="Tres mujeres juntas, en un sillón, sobre un fondo rosa" width="720" height="1280" fetchpriority="high">
+        <source media="(min-width:900px)" srcset="./img/hero-poster-16x9.jpg?v=5" width="1280" height="720">
+        <img src="./img/hero-poster-9x16.jpg?v=5" alt="Tres mujeres juntas, en un sillón, sobre un fondo rosa" width="720" height="1280" fetchpriority="high">
       </picture>
       <video class="hero-film" muted loop playsinline preload="none" aria-hidden="true"></video>
     </figure>
     <div class="hero-text">
-      <h1 id="t-hero"><span>Belleza</span><span><span class="q">que</span> Decide</span></h1>
-      <div class="lede-row">
-        <p class="lede">Mujeres que deciden.</p>
-        <span class="place">Young</span>
-      </div>
-      <div class="hero-foot">
-        <a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20%C2%BFc%C3%B3mo%20est%C3%A1s%3F" target="_blank" rel="noopener"><span class="u">Escribirle</span><span class="arr" aria-hidden="true">→</span></a>
-        <small>Directora de belleza · Río Negro</small>
-      </div>
+      <p class="hero-kicker">Young</p>
+      <h1 id="t-hero">Mujeres que deciden.</h1>
+      <a class="descubrir" href="#compania">Descubrir</a>
     </div>
   </section>
 
@@ -486,7 +522,7 @@
 <footer>
   <div class="col">
     <p class="kicker">Young · Río Negro</p>
-    <p class="wm">Belleza <span class="q">que</span> Decide</p>
+    <p class="wm" aria-label="Belleza que Decide"><span>Belleza</span> <span class="wm-q">que</span> <span>Decide</span></p>
     <a class="ig" href="https://instagram.com/silviag_marykay" target="_blank" rel="noopener">Instagram · silviag_marykay</a>
   </div>
 </footer>
@@ -512,7 +548,7 @@
 
       film.setAttribute('webkit-playsinline', '');
       var desktop = window.matchMedia('(min-width: 900px)');
-      function file(){ return desktop.matches ? './img/hero-16x9.mp4?v=4' : './img/hero-9x16.mp4?v=4'; }
+      function file(){ return desktop.matches ? './img/hero-16x9.mp4?v=5' : './img/hero-9x16.mp4?v=5'; }
       function play(){ var p = film.play(); if (p && p.catch) p.catch(function(){}); }
       function load(){
         var src = file();
