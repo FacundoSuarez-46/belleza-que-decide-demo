@@ -189,6 +189,37 @@
   .look{padding:4.5rem 0 3.25rem}
   .clase{padding:2.25rem 0 2.25rem;border-top:1px solid var(--rosa-palido)}
   .deseo{background:#f4d8d4}
+  .tocador{background:var(--superficie);padding:4.5rem 0 1rem}
+  .tocador-index{
+    display:flex;gap:1.5rem;flex-wrap:wrap;
+    margin:1.25rem 0 0;padding:0;list-style:none;
+  }
+  .tocador-index a{
+    font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;
+    text-decoration:none;color:var(--fuerte);
+    border-bottom:1px solid var(--rosa);padding-bottom:.2rem;
+  }
+  .banda{display:grid;gap:1.5rem;padding:3rem 0;border-top:1px solid var(--rosa-palido)}
+  .banda figure{margin:0;background:var(--rosa-palido)}
+  .banda img{width:100%;height:100%;object-fit:cover;display:block}
+  .banda .shot{aspect-ratio:16/9;overflow:hidden}
+  .banda .portrait{aspect-ratio:3/4;max-width:22rem}
+  .banda h3{font-size:2rem;margin-bottom:.5rem}
+  .banda .copy{padding:0 var(--pad)}
+  .dos{display:grid;gap:1.5rem;margin:1.5rem 0}
+  .dos article figure{aspect-ratio:1;overflow:hidden;margin:0 0 .75rem;background:var(--fondo)}
+  .dos h3{font-size:1.35rem;margin-bottom:.3rem}
+  .dos p,.pasos li span,.familias span{font-size:.9375rem}
+  .fit{display:block;margin-top:.35rem;font-size:.8125rem;color:var(--fuerte)}
+  .pasos{list-style:none;margin:1.25rem 0 0;padding:0;display:grid;gap:.85rem}
+  .pasos li{display:grid;grid-template-columns:1.75rem 1fr;gap:.6rem}
+  .pasos .n{font-family:var(--serif);color:var(--rosa);font-size:1.15rem;line-height:1.2}
+  .pasos strong{display:block;font-weight:500;color:var(--fuerte)}
+  .familias{list-style:none;margin:1.15rem 0 0;padding:0}
+  .familias li{display:grid;grid-template-columns:1.15rem 1fr;gap:.75rem;align-items:start;padding:.7rem 0;border-top:1px solid var(--rosa-palido)}
+  .familias li:last-child{border-bottom:1px solid var(--rosa-palido)}
+  .familias i{width:.7rem;height:.7rem;border-radius:50%;margin-top:.4rem}
+  .familias strong{display:block;font-size:.6875rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;color:var(--fuerte)}
   .unidad{padding:2.25rem 0 2.5rem;background:var(--fondo)}
   .notas{padding:4rem 0 3rem}
   .instalar{padding:2rem 0 2.5rem;border-top:1px solid var(--rosa-palido)}
@@ -350,6 +381,16 @@
     .deseo-frame{min-height:100%;padding:4rem}
     .deseo-copy{display:flex;flex-direction:column;justify-content:center;padding:4.5rem 3.5rem;max-width:none}
 
+    .tocador{padding:6rem 0 2rem}
+    .banda{grid-template-columns:1.1fr .9fr;align-items:center;gap:3rem;padding:4.5rem 0}
+    .banda .copy{padding:0 2.5rem 0 0;max-width:34rem}
+    .banda.flip{grid-template-columns:1.1fr .9fr}
+    .banda.flip figure{order:2}
+    .banda .portrait{max-width:none}
+    .dos{grid-template-columns:1fr 1fr;gap:2rem}
+    .pasos{grid-template-columns:1fr 1fr;gap:1.25rem 2rem}
+    .familias{display:grid;grid-template-columns:1fr 1fr;column-gap:2rem}
+
     .unidad{padding:3rem 0}
     .notas{padding:6rem 0 4rem}
     .instalar{padding:3rem 0 4rem}
@@ -367,7 +408,7 @@
     <ul>
       <li><a href="#look">Look</a></li>
       <li><a href="#clase">Clase</a></li>
-      <li><a href="#productos">Este look</a></li>
+      <li><a href="#tocador">Productos</a></li>
     </ul>
   </nav>
   <a class="mast-mark" href="#inicio" aria-label="Belleza que Decide"><span>Belleza</span><span class="wm-q">que</span><span>Decide</span></a>
@@ -465,6 +506,90 @@
           <li><i style="background:#9d2032"></i> Rojo</li>
         </ul>
         <a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20pedir%20el%20labial%20del%20Look%20de%20octubre." target="_blank" rel="noopener"><span class="u">Pedí este look</span><span class="arr" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="tocador reveal" id="tocador" aria-labelledby="t-tocador">
+    <div class="col">
+      <p class="folio"><span class="n">04</span><span>El tocador</span></p>
+      <h2 id="t-tocador">Para mirar de cerca</h2>
+      <p class="body">Piel, color, perfume y cuerpo. Se mira acá. Se pide por WhatsApp.</p>
+      <ul class="tocador-index">
+        <li><a href="#piel">Piel</a></li>
+        <li><a href="#color">Color</a></li>
+        <li><a href="#perfume">Perfume</a></li>
+        <li><a href="#cuerpo">Cuerpo</a></li>
+      </ul>
+    </div>
+
+    <div class="banda" id="piel">
+      <figure class="shot"><img src="./img/piel-mesa.jpg?v=14" alt="Rutina de piel, sin marca" width="1280" height="720" loading="lazy"></figure>
+      <div class="copy">
+        <h3>Piel</h3>
+        <p class="body">Dos caminos. Elegís el de tu piel y seguís los cuatro pasos.</p>
+        <div class="dos">
+          <article>
+            <figure><img src="./img/piel-matifica.jpg?v=14" alt="Gel matificante, sin marca" width="1024" height="1024" loading="lazy"></figure>
+            <h3>Matifica</h3>
+            <p>Para mixta a grasa. Baja el brillo.</p>
+            <span class="fit">No es para una piel muy seca.</span>
+          </article>
+          <article>
+            <figure><img src="./img/piel-hidrata.jpg?v=14" alt="Crema hidratante, sin marca" width="1024" height="1024" loading="lazy"></figure>
+            <h3>Hidrata</h3>
+            <p>Para normal a seca. Suave, sin tirantez.</p>
+            <span class="fit">Si la zona T brilla mucho, el otro camino.</span>
+          </article>
+        </div>
+        <ol class="pasos">
+          <li><span class="n">1</span><div><strong>Limpia</strong><span>Saca el día. Según el camino.</span></div></li>
+          <li><span class="n">2</span><div><strong>Exfolia</strong><span>Dos o tres veces por semana.</span></div></li>
+          <li><span class="n">3</span><div><strong>Tonifica</strong><span>Equilibra antes de la crema.</span></div></li>
+          <li><span class="n">4</span><div><strong>Hidrata</strong><span>La crema del camino. El óleo, al final.</span></div></li>
+        </ol>
+        <a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20la%20rutina%20para%20mi%20piel." target="_blank" rel="noopener"><span class="u">Quiero la rutina para mi piel</span><span class="arr" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+
+    <div class="banda flip" id="color">
+      <figure class="portrait"><img src="./img/color-labios.jpg?v=14" alt="Tres labiales sin marca" width="864" height="1152" loading="lazy"></figure>
+      <div class="copy">
+        <h3>Color</h3>
+        <p class="body">Labios primero. Hidratante, con brillo, mate o líquido. En la página, tres tonos. El resto, por mensaje.</p>
+        <ul class="swatches" aria-label="Tonos">
+          <li><i style="background:#c9a394"></i> Nude</li>
+          <li><i style="background:#d07a8c"></i> Rosa</li>
+          <li><i style="background:#9d2032"></i> Rojo</li>
+        </ul>
+        <p class="body">Rostro y ojos también: base, corrector, delineador, máscara. Se arma un look, no un listado.</p>
+        <a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20labiales." target="_blank" rel="noopener"><span class="u">Quiero más información sobre labiales</span><span class="arr" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+
+    <div class="banda" id="perfume">
+      <figure class="portrait"><img src="./img/perfume-frasco.jpg?v=14" alt="Perfume sin marca" width="864" height="1152" loading="lazy"></figure>
+      <div class="copy">
+        <h3>Perfume</h3>
+        <p class="body">Por familia, no por colección. Decí cómo querés oler.</p>
+        <ul class="familias">
+          <li><i style="background:#f3b7c7"></i><div><strong>Frutal</strong><span>Fresca, de día.</span></div></li>
+          <li><i style="background:#cbb6d9"></i><div><strong>Floral</strong><span>La más clásica.</span></div></li>
+          <li><i style="background:#e8b29a"></i><div><strong>Chipre</strong><span>Cítrica, elegante.</span></div></li>
+          <li><i style="background:#cfc9c3"></i><div><strong>Fougère</strong><span>Hierba. La más habitual en él.</span></div></li>
+          <li><i style="background:#b45a5a"></i><div><strong>Oriental</strong><span>Ámbar, de noche.</span></div></li>
+          <li><i style="background:#a89078"></i><div><strong>Amaderado</strong><span>Carácter fuerte.</span></div></li>
+        </ul>
+        <a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20un%20perfume." target="_blank" rel="noopener"><span class="u">Quiero un perfume</span><span class="arr" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+
+    <div class="banda flip" id="cuerpo">
+      <figure class="shot"><img src="./img/cuerpo-mesa.jpg?v=14" alt="Loción y crema de manos, sin marca" width="1280" height="720" loading="lazy"></figure>
+      <div class="copy">
+        <h3>Cuerpo</h3>
+        <p class="body">Loción para el cuerpo, crema de manos, y el cuidado de labios antes del color. Poco, y bien.</p>
+        <a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20cuidado%20del%20cuerpo." target="_blank" rel="noopener"><span class="u">Quiero más sobre cuerpo</span><span class="arr" aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
@@ -601,7 +726,7 @@
     }
 
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js?v=13');
+      navigator.serviceWorker.register('./sw.js?v=14');
     }
 
     var seccion = document.getElementById('instalar');
