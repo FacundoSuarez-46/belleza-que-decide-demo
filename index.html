@@ -199,7 +199,8 @@
     text-decoration:none;color:var(--fuerte);
     border-bottom:1px solid var(--rosa);padding-bottom:.2rem;
   }
-  .banda{display:grid;gap:1.5rem;padding:3rem 0;border-top:1px solid var(--rosa-palido)}
+  .banda{display:grid;gap:1.5rem;padding:3rem 0;border-top:1px solid var(--rosa-palido);min-width:0}
+  .banda > *{min-width:0}
   .banda figure{margin:0;background:var(--rosa-palido)}
   .banda img{width:100%;height:100%;object-fit:cover;display:block}
   .banda .shot{aspect-ratio:16/9;overflow:hidden}
@@ -382,9 +383,9 @@
     .deseo-copy{display:flex;flex-direction:column;justify-content:center;padding:4.5rem 3.5rem;max-width:none}
 
     .tocador{padding:6rem 0 2rem}
-    .banda{grid-template-columns:1.1fr .9fr;align-items:center;gap:3rem;padding:4.5rem 0}
+    .banda{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center;gap:3rem;padding:4.5rem 0}
     .banda .copy{padding:0 2.5rem 0 0;max-width:34rem}
-    .banda.flip{grid-template-columns:1.1fr .9fr}
+    .banda.flip{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
     .banda.flip figure{order:2}
     .banda .portrait{max-width:none}
     .dos{grid-template-columns:1fr 1fr;gap:2rem}
