@@ -158,7 +158,7 @@
   }
   .capitulo figure{position:absolute;inset:0;margin:0}
   .capitulo img{
-    width:100%;height:100%;object-fit:cover;object-position:50% 28%;
+    width:100%;height:100%;object-fit:cover;object-position:center 70%;
     transform:scale(1.06);
     animation:ken-slow 32s ease-out forwards;
   }
@@ -473,8 +473,8 @@
   <section class="hero" id="inicio" aria-labelledby="t-hero">
     <figure class="photo">
       <picture>
-        <source media="(min-width:900px)" srcset="./img/hero-poster-16x9.jpg?v=6" width="1280" height="720">
-        <img src="./img/hero-poster-9x16.jpg?v=6" alt="Cuatro mujeres de distintas edades, juntas en un sillón rosa" width="720" height="1280" fetchpriority="high">
+        <source media="(min-width:900px)" srcset="./img/hero-poster-16x9.jpg?v=12" width="1280" height="720">
+        <img src="./img/hero-poster-9x16.jpg?v=12" alt="Cuatro mujeres de distintas edades, juntas en un sillón rosa" width="720" height="1280" fetchpriority="high">
       </picture>
       <video class="hero-film" muted loop playsinline preload="none" aria-hidden="true"></video>
     </figure>
@@ -487,7 +487,7 @@
 
   <section class="capitulo" id="compania" aria-labelledby="t-cap">
     <figure>
-      <img src="./img/look-compania.jpg" alt="Tres mujeres de distintas edades, riendo juntas" width="864" height="1152" loading="lazy">
+      <img src="./img/look-compania.jpg?v=12" alt="Tres mujeres de distintas edades, riendo juntas" width="864" height="1152" loading="lazy">
     </figure>
     <div class="capitulo-text">
       <p class="mes">Primavera · octubre</p>
@@ -506,19 +506,19 @@
       <div class="revista" role="region" aria-label="Páginas del Look de octubre" tabindex="0">
         <div class="revista-track">
           <figure>
-            <img src="./img/look-octubre.jpg" alt="Cinco mujeres de distintas edades, en una sala rosa" width="864" height="1152" loading="lazy">
+            <img src="./img/look-octubre.jpg?v=12" alt="Cinco mujeres de distintas edades, en una sala rosa" width="864" height="1152" loading="lazy">
             <figcaption>Encuentro</figcaption>
           </figure>
           <figure>
-            <img src="./img/look-compania.jpg" alt="Tres mujeres de distintas edades, riendo juntas" width="864" height="1152" loading="lazy">
+            <img src="./img/look-compania.jpg?v=12" alt="Tres mujeres de distintas edades, riendo juntas" width="864" height="1152" loading="lazy">
             <figcaption>Compañía</figcaption>
           </figure>
           <figure>
-            <img src="./img/look-compartir.jpg" alt="Una mujer le acerca un labial a otra, de más edad" width="864" height="1152" loading="lazy">
+            <img src="./img/look-compartir.jpg?v=12" alt="Una mujer le acerca un labial a otra, de más edad" width="864" height="1152" loading="lazy">
             <figcaption>El labial</figcaption>
           </figure>
           <figure>
-            <img src="./img/look-campana.jpg" alt="Labial y crema, sin marca, sobre una tela rosa" width="864" height="1152" loading="lazy">
+            <img src="./img/look-campana.jpg?v=12" alt="Labial y crema, sin marca, sobre una tela rosa" width="864" height="1152" loading="lazy">
             <figcaption>La mesa</figcaption>
           </figure>
         </div>
@@ -545,7 +545,7 @@
 
     <div class="cat-block" id="piel" aria-labelledby="t-piel">
       <figure class="cat-hero">
-        <img src="./img/cat-piel.jpg" alt="Rutina de cuidado de la piel, sin marca" width="1280" height="720" loading="lazy">
+        <img src="./img/cat-piel.jpg?v=12" alt="Rutina de cuidado de la piel, sin marca" width="1280" height="720" loading="lazy">
       </figure>
       <div class="col">
         <h3 id="t-piel">Piel</h3>
@@ -553,13 +553,13 @@
       </div>
       <div class="cat-split">
         <article class="cat-card">
-          <figure><img src="./img/cat-matifica.jpg" alt="Crema matificante, sin marca" width="1024" height="1024" loading="lazy"></figure>
+          <figure><img src="./img/cat-matifica.jpg?v=12" alt="Crema matificante, sin marca" width="1024" height="1024" loading="lazy"></figure>
           <h3>Matifica</h3>
           <p>Para piel mixta a grasa. Baja el brillo y deja la cara fresca.</p>
           <span class="fit">No es para piel muy seca.</span>
         </article>
         <article class="cat-card">
-          <figure><img src="./img/cat-hidrata.jpg" alt="Crema hidratante, sin marca" width="1024" height="1024" loading="lazy"></figure>
+          <figure><img src="./img/cat-hidrata.jpg?v=12" alt="Crema hidratante, sin marca" width="1024" height="1024" loading="lazy"></figure>
           <h3>Hidrata</h3>
           <p>Para piel normal a seca. Soft, sin tirantez.</p>
           <span class="fit">Si te brilla mucho la zona T, el otro camino.</span>
@@ -567,7 +567,7 @@
       </div>
       <div class="col">
         <figure class="cat-hero" style="aspect-ratio:16/9;margin:0 0 1.15rem">
-          <img src="./img/cat-pasos.jpg" alt="Los cuatro pasos de la rutina" width="1280" height="720" loading="lazy">
+          <img src="./img/cat-pasos.jpg?v=12" alt="Los cuatro pasos de la rutina" width="1280" height="720" loading="lazy">
         </figure>
         <p class="body" style="margin-bottom:.25rem">Los cuatro pasos. El óleo, al final.</p>
         <ol class="cat-steps">
@@ -579,17 +579,17 @@
         <div class="cat-rail" style="margin-left:calc(var(--pad) * -1);margin-right:calc(var(--pad) * -1)">
           <div class="cat-rail-track">
             <article>
-              <figure><img src="./img/cat-pasos.jpg" alt="Rutina de todos los días" width="1280" height="720" loading="lazy"></figure>
+              <figure><img src="./img/cat-pasos.jpg?v=12" alt="Rutina de todos los días" width="1280" height="720" loading="lazy"></figure>
               <h3>Todos los días</h3>
               <p>Limpia, humecta, día con protección, noche y contorno de ojos.</p>
             </article>
             <article>
-              <figure><img src="./img/cat-hidrata.jpg" alt="Rutina cuando se notan los años" width="1024" height="1024" loading="lazy"></figure>
+              <figure><img src="./img/cat-hidrata.jpg?v=12" alt="Rutina cuando se notan los años" width="1024" height="1024" loading="lazy"></figure>
               <h3>Cuando se notan los años</h3>
               <p>Para firmeza y líneas. No reemplaza el camino matificante o hidratante: lo suma.</p>
             </article>
             <article>
-              <figure><img src="./img/cat-matifica.jpg" alt="Paso concentrado" width="1024" height="1024" loading="lazy"></figure>
+              <figure><img src="./img/cat-matifica.jpg?v=12" alt="Paso concentrado" width="1024" height="1024" loading="lazy"></figure>
               <h3>El paso concentrado</h3>
               <p>Luminosidad, renovación o barrera. Un producto, un objetivo.</p>
             </article>
@@ -605,7 +605,7 @@
         <p class="body">Labios primero. Después, rostro y ojos. Los tonos de la página: Nude, Rosa y Rojo. El resto, por mensaje.</p>
       </div>
       <figure class="cat-hero is-tall">
-        <img src="./img/cat-labios.jpg" alt="Tres labiales sin marca: nude, rosa y rojo" width="864" height="1152" loading="lazy">
+        <img src="./img/cat-labios.jpg?v=12" alt="Tres labiales sin marca: nude, rosa y rojo" width="864" height="1152" loading="lazy">
       </figure>
       <div class="col">
         <h3>Labios</h3>
@@ -618,7 +618,7 @@
         <a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20labiales." target="_blank" rel="noopener"><span class="u">Quiero más información sobre labiales</span><span class="arr" aria-hidden="true">→</span></a>
       </div>
       <figure class="cat-hero" style="margin-top:2rem">
-        <img src="./img/cat-color.jpg" alt="Base, máscara y delineador, sin marca" width="1280" height="720" loading="lazy">
+        <img src="./img/cat-color.jpg?v=12" alt="Base, máscara y delineador, sin marca" width="1280" height="720" loading="lazy">
       </figure>
       <div class="col">
         <div class="cat-rail" style="margin-left:calc(var(--pad) * -1);margin-right:calc(var(--pad) * -1)">
@@ -639,7 +639,7 @@
 
     <div class="cat-block" id="perfume" aria-labelledby="t-perfume">
       <figure class="cat-hero is-tall">
-        <img src="./img/cat-perfume.jpg" alt="Perfume sin marca, sobre mármol" width="864" height="1152" loading="lazy">
+        <img src="./img/cat-perfume.jpg?v=12" alt="Perfume sin marca, sobre mármol" width="864" height="1152" loading="lazy">
       </figure>
       <div class="col">
         <h3 id="t-perfume">Perfume</h3>
@@ -658,7 +658,7 @@
 
     <div class="cat-block" id="cuerpo" aria-labelledby="t-cuerpo">
       <figure class="cat-hero">
-        <img src="./img/cat-cuerpo.jpg" alt="Loción y crema de manos, sin marca" width="1280" height="720" loading="lazy">
+        <img src="./img/cat-cuerpo.jpg?v=12" alt="Loción y crema de manos, sin marca" width="1280" height="720" loading="lazy">
       </figure>
       <div class="col">
         <h3 id="t-cuerpo">Cuerpo</h3>
@@ -700,7 +700,7 @@
   <section class="unidad reveal" id="equipo" aria-labelledby="t-equipo">
     <div class="col">
       <figure class="grupo">
-        <img src="./img/clase.jpg" alt="Cuatro mujeres de distintas edades en una clase" width="1280" height="720" loading="lazy">
+        <img src="./img/clase.jpg?v=12" alt="Cuatro mujeres de distintas edades en una clase" width="1280" height="720" loading="lazy">
       </figure>
       <h2 id="t-equipo">Sumate al <span class="q">equipo</span></h2>
       <p class="body">Si querés sumarte a vender, escribinos.</p>
@@ -768,7 +768,7 @@
 
       film.setAttribute('webkit-playsinline', '');
       var desktop = window.matchMedia('(min-width: 900px)');
-      function file(){ return desktop.matches ? './img/hero-16x9.mp4?v=6' : './img/hero-9x16.mp4?v=6'; }
+      function file(){ return desktop.matches ? './img/hero-16x9.mp4?v=12' : './img/hero-9x16.mp4?v=12'; }
       function play(){ var p = film.play(); if (p && p.catch) p.catch(function(){}); }
       function load(){
         var src = file();
@@ -829,7 +829,7 @@
     }
 
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js?v=11');
+      navigator.serviceWorker.register('./sw.js?v=12');
     }
 
     var seccion = document.getElementById('instalar');
