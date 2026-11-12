@@ -383,8 +383,8 @@
   <section class="hero" id="inicio" aria-labelledby="t-hero">
     <figure class="photo">
       <picture>
-        <source media="(min-width:900px)" srcset="./img/hero-poster-16x9.jpg?v=5" width="1280" height="720">
-        <img src="./img/hero-poster-9x16.jpg?v=5" alt="Tres mujeres juntas, en un sillón, sobre un fondo rosa" width="720" height="1280" fetchpriority="high">
+        <source media="(min-width:900px)" srcset="./img/hero-poster-16x9.jpg?v=6" width="1280" height="720">
+        <img src="./img/hero-poster-9x16.jpg?v=6" alt="Cuatro mujeres de distintas edades, juntas en un sillón rosa" width="720" height="1280" fetchpriority="high">
       </picture>
       <video class="hero-film" muted loop playsinline preload="none" aria-hidden="true"></video>
     </figure>
@@ -397,7 +397,7 @@
 
   <section class="capitulo" id="compania" aria-labelledby="t-cap">
     <figure>
-      <img src="./img/look-compania.jpg" alt="Tres mujeres juntas, campaña primavera 2026" width="1061" height="587" loading="lazy">
+      <img src="./img/look-compania.jpg" alt="Tres mujeres de distintas edades, riendo juntas" width="864" height="1152" loading="lazy">
     </figure>
     <div class="capitulo-text">
       <p class="mes">Primavera · octubre</p>
@@ -410,26 +410,26 @@
       <div class="col">
         <p class="folio"><span class="n">01</span><span>Look</span></p>
         <h2 id="t-look">El Look de octubre</h2>
-        <p class="body">Primavera 2026. El folleto del mes, siempre el último.</p>
+        <p class="body">Primavera 2026. El del mes, siempre el último. Se pide por WhatsApp.</p>
         <p class="hint">Deslizá las páginas</p>
       </div>
       <div class="revista" role="region" aria-label="Páginas del Look de octubre" tabindex="0">
         <div class="revista-track">
           <figure>
-            <img src="./img/look-octubre.jpg" alt="Tapa del Look de primavera 2026" width="1061" height="1260" loading="lazy">
-            <figcaption>Tapa · oct 2026</figcaption>
+            <img src="./img/look-octubre.jpg" alt="Cinco mujeres de distintas edades, en una sala rosa" width="864" height="1152" loading="lazy">
+            <figcaption>Encuentro</figcaption>
           </figure>
           <figure>
-            <img src="./img/look-compania.jpg" alt="Campaña: tres mujeres en un sillón rosa" width="1061" height="587" loading="lazy">
+            <img src="./img/look-compania.jpg" alt="Tres mujeres de distintas edades, riendo juntas" width="864" height="1152" loading="lazy">
             <figcaption>Compañía</figcaption>
           </figure>
           <figure>
-            <img src="./img/look-compartir.jpg" alt="Página Compartí un labial y brillá" width="1061" height="1260" loading="lazy">
+            <img src="./img/look-compartir.jpg" alt="Una mujer le acerca un labial a otra, de más edad" width="864" height="1152" loading="lazy">
             <figcaption>El labial</figcaption>
           </figure>
           <figure>
-            <img src="./img/look-campana.jpg" alt="Campaña: el primer labial se comparte" width="1061" height="880" loading="lazy">
-            <figcaption>Compartir</figcaption>
+            <img src="./img/look-campana.jpg" alt="Labial y crema, sin marca, sobre una tela rosa" width="864" height="1152" loading="lazy">
+            <figcaption>La mesa</figcaption>
           </figure>
         </div>
       </div>
@@ -453,7 +453,7 @@
   <section class="deseo reveal" id="productos" aria-labelledby="t-prod">
     <div class="deseo-grid">
       <figure class="deseo-frame">
-        <img src="./img/deseo.jpg" alt="Labial del Look de octubre" width="900" height="1200" loading="lazy">
+        <img src="./img/deseo.jpg" alt="Labial rosa, sin marca" width="864" height="1152" loading="lazy">
       </figure>
       <div class="deseo-copy">
         <p class="folio"><span class="n">03</span><span>Para mirar</span></p>
@@ -472,7 +472,7 @@
   <section class="unidad reveal" id="equipo" aria-labelledby="t-equipo">
     <div class="col">
       <figure class="grupo">
-        <img src="./img/clase.jpg" alt="Dos mujeres compartiendo un labial" width="1152" height="864" loading="lazy">
+        <img src="./img/clase.jpg" alt="Cuatro mujeres de distintas edades en una clase" width="1280" height="720" loading="lazy">
       </figure>
       <h2 id="t-equipo">Sumate al <span class="q">equipo</span></h2>
       <p class="body">Si querés sumarte a vender, escribinos.</p>
@@ -540,7 +540,7 @@
 
       film.setAttribute('webkit-playsinline', '');
       var desktop = window.matchMedia('(min-width: 900px)');
-      function file(){ return desktop.matches ? './img/hero-16x9.mp4?v=5' : './img/hero-9x16.mp4?v=5'; }
+      function file(){ return desktop.matches ? './img/hero-16x9.mp4?v=6' : './img/hero-9x16.mp4?v=6'; }
       function play(){ var p = film.play(); if (p && p.catch) p.catch(function(){}); }
       function load(){
         var src = file();
