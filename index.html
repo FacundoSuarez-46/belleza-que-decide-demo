@@ -23,6 +23,7 @@
     --serif:"Fraunces", Georgia, "Times New Roman", serif;
     --sans:"Manrope", system-ui, sans-serif;
     --pad:1.25rem;
+    --col:28rem;
     --bar:64px;
   }
   *,*::before,*::after{box-sizing:border-box}
@@ -30,13 +31,14 @@
   body{
     margin:0;background:var(--fondo);color:var(--texto);
     font-family:var(--sans);font-size:1rem;line-height:1.6;
-    overflow-x:clip;
+    overflow-x:clip;max-width:100%;
   }
   a{color:inherit}
   img{max-width:100%;display:block}
   :focus-visible{outline:2px solid var(--rosa);outline-offset:3px}
 
-  .col{max-width:28rem;margin:0 auto;padding:0 var(--pad)}
+  .col{width:min(100%, var(--col));margin-inline:auto;padding-inline:var(--pad)}
+  .revista figure,.deseo-grid > *,.banda > *,.dos,.dos article,.pasos,.familias{min-width:0}
 
   .mast{
     --mast: 3.5rem;
@@ -199,15 +201,19 @@
     text-decoration:none;color:var(--fuerte);
     border-bottom:1px solid var(--rosa);padding-bottom:.2rem;
   }
-  .banda{display:grid;gap:1.5rem;padding:3rem 0;border-top:1px solid var(--rosa-palido);min-width:0}
+  .banda{
+    display:grid;grid-template-columns:minmax(0,1fr);gap:1.5rem;
+    width:min(100%, 76rem);margin-inline:auto;
+    padding:3rem var(--pad);border-top:1px solid var(--rosa-palido);min-width:0;
+  }
   .banda > *{min-width:0}
-  .banda figure{margin:0;background:var(--rosa-palido)}
-  .banda img{width:100%;height:100%;object-fit:cover;display:block}
+  .banda figure{margin:0;background:var(--rosa-palido);min-width:0;overflow:hidden}
+  .banda img{width:100%;height:100%;max-width:100%;object-fit:cover;display:block}
   .banda .shot{aspect-ratio:16/9;overflow:hidden}
   .banda .portrait{aspect-ratio:3/4;max-width:22rem}
   .banda h3{font-size:2rem;margin-bottom:.5rem}
-  .banda .copy{padding:0 var(--pad)}
-  .dos{display:grid;gap:1.5rem;margin:1.5rem 0}
+  .banda .copy{padding:0;min-width:0}
+  .dos{display:grid;grid-template-columns:minmax(0,1fr);gap:1.5rem;margin:1.5rem 0}
   .dos article figure{aspect-ratio:1;overflow:hidden;margin:0 0 .75rem;background:var(--fondo)}
   .dos h3{font-size:1.35rem;margin-bottom:.3rem}
   .dos p,.pasos li span,.familias span{font-size:.9375rem}
@@ -230,19 +236,21 @@
   }
 
   .revista{
-    overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
-    scrollbar-width:none;margin:1.5rem 0 1.25rem;
-    padding-bottom:.25rem;
+    --edge:max(var(--pad), calc((100% - min(100%, var(--col))) / 2 + var(--pad)));
+    overflow-x:auto;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;
+    scroll-padding-inline:var(--edge);
+    scrollbar-width:none;margin:1.75rem 0 1.25rem;
   }
   .revista::-webkit-scrollbar{display:none}
-  .revista-track{display:flex;gap:.875rem;padding:0 var(--pad);width:max-content}
+  .revista-track{display:flex;gap:1rem;width:max-content;padding:0 var(--edge) 1.25rem}
   .revista figure{
-    flex:0 0 min(74vw, 19.5rem);margin:0;scroll-snap-align:start;
+    flex:0 0 min(68vw, 17rem);width:min(68vw, 17rem);min-width:0;margin:0;
+    scroll-snap-align:start;overflow:hidden;
     background:var(--rosa-palido);
     box-shadow:0 1px 2px rgba(58,58,60,.08), 0 22px 44px -20px rgba(58,58,60,.38);
   }
   .revista a{display:block;color:inherit;text-decoration:none}
-  .revista img{width:100%;height:auto}
+  .revista img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center;max-width:100%}
   .revista figcaption{
     padding:.7rem .15rem 0;
     font-size:.6875rem;letter-spacing:.2em;text-transform:uppercase;
@@ -253,18 +261,19 @@
   .clase-row{display:flex;justify-content:space-between;align-items:center;gap:.25rem 1rem;flex-wrap:wrap}
   .clase .when{display:block;font-size:.8125rem;letter-spacing:.04em;color:var(--fuerte);margin-top:.125rem}
 
-  .deseo-grid{display:grid}
+  .deseo-grid{display:grid;grid-template-columns:minmax(0,1fr);width:min(100%,72rem);margin-inline:auto}
   .deseo-frame{
     display:grid;place-items:center;
-    min-height:28rem;padding:3rem 2rem 2rem;
+    padding:2.5rem var(--pad);
     background:linear-gradient(180deg, #f9ddd9 0%, #f4d8d4 100%);
+    overflow:hidden;
   }
   .deseo-frame img{
-    height:min(54vh, 28rem);width:auto;max-width:72%;
+    width:min(100%, 16rem);height:auto;max-height:24rem;
     object-fit:contain;
     filter:drop-shadow(0 22px 36px rgba(58,58,60,.16));
   }
-  .deseo-copy{padding:0 var(--pad) calc(2.5rem + var(--bar));max-width:28rem;margin:0 auto;width:100%}
+  .deseo-copy{padding:0 var(--pad) calc(2.5rem + var(--bar));max-width:var(--col);margin-inline:auto;width:100%}
   .deseo .folio::after{background:rgba(233,126,164,.35)}
   .deseo h2{margin-bottom:.5rem}
   .swatches{list-style:none;margin:1.15rem 0 1.1rem;padding:0;display:flex;gap:1.15rem}
@@ -322,8 +331,8 @@
   .tabbar a.wa{flex-direction:column;gap:.25rem;color:var(--fuerte);font-weight:600;font-size:.625rem;letter-spacing:.1em}
   .tabbar a.wa svg{width:22px;height:22px;fill:var(--rosa);flex:none}
 
-  html.js .reveal{opacity:0;transform:translateY(22px)}
-  html.js .reveal.is-in{opacity:1;transform:none;transition:opacity .95s ease, transform .95s ease}
+  html.js .reveal{transform:translateY(16px)}
+  html.js .reveal.is-in{transform:none;transition:transform .7s ease}
 
   @keyframes ken{
     from{transform:scale(1.08)}
@@ -349,8 +358,7 @@
   section[id]{scroll-margin-top:calc(3.5rem + env(safe-area-inset-top) + .5rem)}
 
   @media (min-width:900px){
-    :root{--pad:2.5rem}
-    .col{max-width:38rem}
+    :root{--pad:2.5rem;--col:40rem}
 
     .hero{height:calc(100svh - 4rem);min-height:38rem}
     .capitulo{height:100svh;min-height:42rem}
@@ -367,30 +375,30 @@
     .descubrir{margin-top:1.6rem;font-size:.9375rem}
 
     .capitulo-text{
-      max-width:none;margin:0;
-      padding:0 3rem 4.5rem max(var(--pad), calc((100vw - 72rem) / 2 + var(--pad)));
+      max-width:var(--col);margin:0 auto;
+      padding:0 var(--pad) 4.5rem;
     }
     .capitulo h2{font-size:clamp(3.4rem, 6vw, 5.6rem);max-width:16ch}
 
     h2{font-size:2.75rem}
     .look{padding:7.5rem 0 5.5rem}
-    .revista-track{padding:0 max(var(--pad), calc((100vw - 38rem) / 2 + var(--pad)))}
-    .revista figure{flex-basis:22rem}
+    .revista figure{flex-basis:18.5rem;width:18.5rem}
     .clase{padding:3rem 0}
 
-    .deseo-grid{grid-template-columns:1fr 1fr;min-height:36rem;align-items:stretch}
-    .deseo-frame{min-height:100%;padding:4rem}
-    .deseo-copy{display:flex;flex-direction:column;justify-content:center;padding:4.5rem 3.5rem;max-width:none}
+    .deseo-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
+    .deseo-frame{padding:3.5rem var(--pad)}
+    .deseo-frame img{width:min(100%, 18rem);max-height:28rem}
+    .deseo-copy{display:flex;flex-direction:column;justify-content:center;padding:3.5rem var(--pad);max-width:32rem;margin:0}
 
     .tocador{padding:6rem 0 2rem}
-    .banda{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center;gap:3rem;padding:4.5rem 0}
-    .banda .copy{padding:0 2.5rem 0 0;max-width:34rem}
+    .banda{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center;gap:3rem;padding:4.5rem var(--pad)}
+    .banda .copy{padding:0;max-width:34rem}
     .banda.flip{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
     .banda.flip figure{order:2}
     .banda .portrait{max-width:none}
-    .dos{grid-template-columns:1fr 1fr;gap:2rem}
-    .pasos{grid-template-columns:1fr 1fr;gap:1.25rem 2rem}
-    .familias{display:grid;grid-template-columns:1fr 1fr;column-gap:2rem}
+    .dos{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2rem}
+    .pasos{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.25rem 2rem}
+    .familias{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:2rem}
 
     .unidad{padding:3rem 0}
     .notas{padding:6rem 0 4rem}
@@ -458,7 +466,7 @@
       <div class="revista" role="region" aria-label="Páginas del Look de octubre" tabindex="0">
         <div class="revista-track">
           <figure>
-            <img src="./img/look-octubre.jpg?v=13" alt="Tapa del Look de primavera 2026" width="1061" height="1260" loading="lazy">
+            <img src="./img/look-octubre.jpg?v=15" alt="Grupo del Look de primavera 2026" width="1061" height="856" loading="lazy">
             <figcaption>Tapa · oct 2026</figcaption>
           </figure>
           <figure>
@@ -466,11 +474,11 @@
             <figcaption>Compañía</figcaption>
           </figure>
           <figure>
-            <img src="./img/look-compartir.jpg?v=13" alt="Página Compartí un labial y brillá" width="1061" height="1260" loading="lazy">
+            <img src="./img/look-compartir.jpg?v=15" alt="Mujer del Look de octubre" width="318" height="957" loading="lazy">
             <figcaption>El labial</figcaption>
           </figure>
           <figure>
-            <img src="./img/look-campana.jpg?v=13" alt="Campaña: el primer labial se comparte" width="1061" height="880" loading="lazy">
+            <img src="./img/look-campana.jpg?v=15" alt="Dos mujeres compartiendo un labial" width="530" height="686" loading="lazy">
             <figcaption>Compartir</figcaption>
           </figure>
         </div>
@@ -727,7 +735,7 @@
     }
 
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js?v=14');
+      navigator.serviceWorker.register('./sw.js?v=15');
     }
 
     var seccion = document.getElementById('instalar');
