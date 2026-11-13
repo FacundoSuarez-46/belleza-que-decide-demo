@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f2e8e6">
+<title>Instalar · Belleza que Decide</title>
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,300&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --fondo:#f2e8e6;--superficie:#fff;--rosa:#e97ea4;--rosa-palido:#f9ddd9;
+    --texto:#68696b;--fuerte:#3a3a3c;
+    --serif:"Fraunces", Georgia, serif;--sans:"Manrope", system-ui, sans-serif;
+    --pad:1.25rem;--col:28rem;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  body{margin:0;background:var(--fondo);color:var(--texto);font-family:var(--sans);line-height:1.55}
+  a{color:inherit}
+  img,svg{display:block;max-width:100%}
+  .mast{
+    display:flex;justify-content:center;align-items:center;
+    height:3.5rem;background:var(--superficie);
+  }
+  .marca{
+    display:inline-flex;align-items:baseline;gap:.22em;
+    font-family:var(--serif);font-size:1.18rem;color:var(--fuerte);text-decoration:none;
+  }
+  .marca i{font-style:italic;font-weight:300;color:var(--rosa);font-size:.78em}
+  main{width:min(100%, 40rem);margin:0 auto;padding:2.5rem var(--pad) 4rem}
+  h1{font-family:var(--serif);font-weight:400;font-size:2.4rem;line-height:1.1;color:var(--fuerte);margin:0 0 .6rem}
+  .lead{margin:0 0 2rem;max-width:34ch}
+  ol{list-style:none;margin:0;padding:0;display:grid;gap:1.25rem}
+  li{
+    display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:1rem;align-items:center;
+    background:var(--superficie);padding:1rem;
+  }
+  li h2{font-family:var(--serif);font-weight:400;font-size:1.35rem;color:var(--fuerte);margin:0 0 .25rem}
+  li p{margin:0}
+  .n{display:block;margin-bottom:.35rem;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rosa)}
+  .nota{margin:2rem 0 0;font-size:.95rem}
+  .volver{display:inline-block;margin-top:1.5rem;color:var(--fuerte);text-decoration:none;border-bottom:1px solid var(--rosa);padding-bottom:.15rem}
+  @media (max-width:560px){
+    li{grid-template-columns:minmax(0,1fr)}
+    .dibujo{max-width:8rem}
+  }
+</style>
+</head>
+<body>
+<header class="mast">
+  <a class="marca" href="./"><span>Belleza</span> <i>que</i> <span>Decide</span></a>
+</header>
+<main>
+  <h1>Dejala en el inicio.</h1>
+  <p class="lead">En el iPhone se hace desde Safari. Son tres toques.</p>
+  <ol>
+    <li>
+      <svg class="dibujo" viewBox="0 0 120 210" aria-hidden="true">
+        <rect x="8" y="6" width="104" height="198" rx="16" fill="#fff" stroke="#3a3a3c" stroke-width="2"/>
+        <rect x="46" y="14" width="28" height="5" rx="2" fill="#e8d5d2"/>
+        <rect x="18" y="32" width="84" height="140" fill="#f2e8e6"/>
+        <text x="60" y="108" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#e97ea4">B</text>
+        <rect x="18" y="176" width="84" height="20" fill="#fff"/>
+        <rect x="62" y="178" width="22" height="16" rx="3" fill="none" stroke="#e97ea4" stroke-width="2"/>
+        <path d="M73 190 V181 M69 185 L73 181 L77 185" fill="none" stroke="#e97ea4" stroke-width="2"/>
+      </svg>
+      <div>
+        <span class="n">01</span>
+        <h2>Compartir</h2>
+        <p>Abajo, en Safari, el cuadradito con la flecha hacia arriba.</p>
+      </div>
+    </li>
+    <li>
+      <svg class="dibujo" viewBox="0 0 120 210" aria-hidden="true">
+        <rect x="8" y="6" width="104" height="198" rx="16" fill="#fff" stroke="#3a3a3c" stroke-width="2"/>
+        <rect x="18" y="96" width="84" height="96" rx="10" fill="#f7f4f3"/>
+        <rect x="28" y="128" width="64" height="22" rx="4" fill="#fff" stroke="#e97ea4" stroke-width="2"/>
+        <text x="60" y="143" text-anchor="middle" font-family="Manrope, sans-serif" font-size="8" fill="#3a3a3c">Agregar a inicio</text>
+        <rect x="28" y="108" width="64" height="14" rx="3" fill="#fff"/>
+        <rect x="28" y="156" width="64" height="14" rx="3" fill="#fff"/>
+      </svg>
+      <div>
+        <span class="n">02</span>
+        <h2>Agregar a inicio</h2>
+        <p>En la lista que se abre, esa línea. Si no aparece, deslizá un poco.</p>
+      </div>
+    </li>
+    <li>
+      <svg class="dibujo" viewBox="0 0 120 210" aria-hidden="true">
+        <rect x="8" y="6" width="104" height="198" rx="16" fill="#fff" stroke="#3a3a3c" stroke-width="2"/>
+        <rect x="18" y="36" width="84" height="150" fill="#f2e8e6"/>
+        <rect x="30" y="52" width="28" height="28" rx="7" fill="#e97ea4"/>
+        <text x="44" y="72" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#f2e8e6">B</text>
+        <text x="44" y="92" text-anchor="middle" font-family="Manrope, sans-serif" font-size="6" fill="#3a3a3c">Belleza</text>
+        <rect x="66" y="52" width="28" height="28" rx="7" fill="#fff" stroke="#e8d5d2"/>
+        <rect x="30" y="100" width="28" height="28" rx="7" fill="#fff" stroke="#e8d5d2"/>
+        <rect x="66" y="100" width="28" height="28" rx="7" fill="#fff" stroke="#e8d5d2"/>
+      </svg>
+      <div>
+        <span class="n">03</span>
+        <h2>Listo</h2>
+        <p>Confirmá con Agregar. El ícono rosa queda en la pantalla de inicio.</p>
+      </div>
+    </li>
+  </ol>
+  <p class="nota">En Android el aviso sale solo, la primera vez. Si no aparece: Chrome, menú, Instalar app.</p>
+  <a class="volver" href="./">Volver</a>
+</main>
+</body>
+</html>

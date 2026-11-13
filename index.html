@@ -151,14 +151,15 @@
 
   .capitulo{
     position:relative;
-    height:calc(100svh - var(--bar) - env(safe-area-inset-bottom));
-    min-height:32rem;
+    aspect-ratio:16/9;
+    height:auto;
+    min-height:0;
     overflow:hidden;
     color:var(--fondo);
   }
   .capitulo figure{position:absolute;inset:0;margin:0}
   .capitulo img{
-    width:100%;height:100%;object-fit:cover;object-position:50% 28%;
+    width:100%;height:100%;object-fit:cover;object-position:50% 46%;
     transform:scale(1.06);
     animation:ken-slow 32s ease-out forwards;
   }
@@ -248,7 +249,8 @@
     box-shadow:0 1px 2px rgba(58,58,60,.08), 0 22px 44px -20px rgba(58,58,60,.38);
   }
   .revista a{display:block;color:inherit;text-decoration:none}
-  .revista img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center;max-width:100%}
+  .revista img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:center;max-width:100%}
+  .revista figure.tono img{object-fit:contain;background:var(--rosa-palido)}
   .revista figcaption{
     padding:.7rem .15rem 0;
     font-size:.6875rem;letter-spacing:.2em;text-transform:uppercase;
@@ -291,6 +293,22 @@
   .inst-row{display:flex;justify-content:space-between;align-items:center;gap:.25rem 1.25rem;flex-wrap:wrap}
   .inst-row p{font-family:var(--serif);font-size:1.125rem;line-height:1.35;color:var(--fuerte);max-width:26ch}
   .instalar[hidden]{display:none}
+  .aviso-instalar{
+    position:fixed;left:0;right:0;z-index:25;
+    bottom:calc(var(--bar) + env(safe-area-inset-bottom));
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;
+    padding:.85rem var(--pad);
+    background:var(--superficie);color:var(--fuerte);
+    border-top:1px solid var(--rosa-palido);
+    box-shadow:0 -10px 30px -18px rgba(58,58,60,.35);
+  }
+  .aviso-instalar[hidden]{display:none}
+  .aviso-instalar p{margin:0;font-family:var(--serif);font-size:1.05rem;line-height:1.3;color:var(--fuerte)}
+  .aviso-instalar .lado{display:flex;align-items:center;gap:.35rem 1rem}
+  .aviso-no{
+    border:0;background:none;color:var(--texto);cursor:pointer;
+    font:500 .8125rem/1 var(--sans);min-height:44px;padding:0 .25rem;
+  }
 
   .hoja{
     position:fixed;inset:auto 0 0 0;margin:0 auto;width:min(100%,28rem);max-width:100%;
@@ -359,7 +377,7 @@
     :root{--pad:2.5rem;--col:40rem}
 
     .hero{height:calc(100svh - 4rem);aspect-ratio:auto;min-height:32rem}
-    .capitulo{height:100svh;min-height:42rem}
+    .capitulo{height:100svh;aspect-ratio:auto;min-height:42rem}
     .mast{
       --mast:4rem;
       height:4rem;padding:0 2.5rem;
@@ -401,6 +419,7 @@
     .unidad{padding:3rem 0}
     .notas{padding:6rem 0 4rem}
     .instalar{padding:3rem 0 4rem}
+    .aviso-instalar{bottom:0}
 
     .tabbar{display:none}
     footer{padding-bottom:5rem}
@@ -444,7 +463,7 @@
 
   <section class="capitulo" id="compania" aria-labelledby="t-cap">
     <figure>
-      <img src="./img/look-compania.jpg?v=13" alt="Tres mujeres juntas, campaña primavera 2026" width="1061" height="587" loading="lazy">
+      <img src="./img/capitulo-mesa.jpg?v=17" alt="Cuatro mujeres en la mesa de la clase" width="1280" height="720" loading="lazy">
     </figure>
     <div class="capitulo-text">
       <p class="mes">Primavera · octubre</p>
@@ -463,20 +482,16 @@
       <div class="revista" role="region" aria-label="Páginas del Look de octubre" tabindex="0">
         <div class="revista-track">
           <figure>
-            <img src="./img/look-octubre.jpg?v=15" alt="Grupo del Look de primavera 2026" width="1061" height="856" loading="lazy">
-            <figcaption>Tapa · oct 2026</figcaption>
+            <img src="./img/look-mesa.jpg?v=17" alt="Cuatro mujeres alrededor de la mesa" width="1280" height="720" loading="lazy">
+            <figcaption>La mesa</figcaption>
           </figure>
           <figure>
-            <img src="./img/look-compania.jpg?v=13" alt="Campaña: tres mujeres en un sillón rosa" width="1061" height="587" loading="lazy">
-            <figcaption>Compañía</figcaption>
+            <img src="./img/look-pase.jpg?v=17" alt="Se pasan un labial en la mesa" width="1280" height="720" loading="lazy">
+            <figcaption>El pase</figcaption>
           </figure>
-          <figure>
-            <img src="./img/look-compartir.jpg?v=15" alt="Mujer del Look de octubre" width="318" height="957" loading="lazy">
-            <figcaption>El labial</figcaption>
-          </figure>
-          <figure>
-            <img src="./img/look-campana.jpg?v=15" alt="Dos mujeres compartiendo un labial" width="530" height="686" loading="lazy">
-            <figcaption>Compartir</figcaption>
+          <figure class="tono">
+            <img src="./img/color-labios.jpg?v=14" alt="Tres labiales sin marca" width="864" height="1152" loading="lazy">
+            <figcaption>Los tonos</figcaption>
           </figure>
         </div>
       </div>
@@ -603,7 +618,7 @@
   <section class="unidad reveal" id="equipo" aria-labelledby="t-equipo">
     <div class="col">
       <figure class="grupo">
-        <img src="./img/clase.jpg?v=13" alt="Dos mujeres compartiendo un labial" width="1152" height="864" loading="lazy">
+        <img src="./img/sumate-mesa.jpg?v=17" alt="La más grande mira el labial que le alcanzaron" width="1280" height="720" loading="lazy">
       </figure>
       <h2 id="t-equipo">Sumate al <span class="q">equipo</span></h2>
       <p class="body">Si querés sumarte a vender, escribinos.</p>
@@ -637,10 +652,13 @@
   </div>
 </main>
 
-<dialog class="hoja" id="hoja" aria-labelledby="hoja-t">
-  <p class="hoja-t" id="hoja-t">Safari<span class="sep" aria-hidden="true">→</span>Compartir<span class="sep" aria-hidden="true">→</span>Agregar a inicio</p>
-  <form method="dialog"><button class="act" type="submit"><span class="u">Listo</span></button></form>
-</dialog>
+<div class="aviso-instalar" id="aviso-instalar" hidden>
+  <p>Dejala en el inicio.</p>
+  <div class="lado">
+    <button class="act" type="button" id="aviso-si"><span class="u">Instalar</span><span class="arr" aria-hidden="true">→</span></button>
+    <button class="aviso-no" type="button" id="aviso-no">Ahora no</button>
+  </div>
+</div>
 
 <footer>
   <div class="col">
@@ -732,50 +750,58 @@
     }
 
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js?v=16');
+      navigator.serviceWorker.register('./sw.js?v=17');
     }
 
     var seccion = document.getElementById('instalar');
     var boton = document.getElementById('btn-instalar');
-    var hoja = document.getElementById('hoja');
-    var hojaTexto = document.getElementById('hoja-t');
+    var barra = document.getElementById('aviso-instalar');
     var aviso = null;
+    var clave = 'bqd-instalar';
 
     var standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
-    if (standalone) { seccion.hidden = true; return; }
+    if (standalone) {
+      seccion.hidden = true;
+      return;
+    }
 
     var esIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
       (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 
+    function cerrarBarra(){
+      try { localStorage.setItem(clave, 'no'); } catch (err) {}
+      barra.hidden = true;
+    }
+    function mostrarBarra(){
+      var guardado = '';
+      try { guardado = localStorage.getItem(clave) || ''; } catch (err) {}
+      if (guardado === 'no') return;
+      barra.hidden = false;
+    }
+    function instalar(){
+      if (aviso) {
+        aviso.prompt();
+        aviso.userChoice.finally(function(){ aviso = null; barra.hidden = true; });
+        return;
+      }
+      window.location.href = './instalar.html';
+    }
+
+    if (esIOS) mostrarBarra();
     window.addEventListener('beforeinstallprompt', function(e){
       e.preventDefault();
       aviso = e;
+      mostrarBarra();
     });
     window.addEventListener('appinstalled', function(){
       aviso = null;
+      barra.hidden = true;
       seccion.hidden = true;
     });
 
-    function abrirHoja(pasos){
-      var sep = '<span class="sep" aria-hidden="true">→</span>';
-      hojaTexto.innerHTML = pasos.join(sep);
-      if (typeof hoja.showModal === 'function') hoja.showModal();
-      else hoja.setAttribute('open','');
-    }
-
-    boton.addEventListener('click', function(){
-      if (aviso) {
-        aviso.prompt();
-        aviso.userChoice.finally(function(){ aviso = null; });
-        return;
-      }
-      if (esIOS) abrirHoja(['Safari','Compartir','Agregar a inicio']);
-      else abrirHoja(['Chrome','Menú','Instalar app']);
-    });
-
-    hoja.addEventListener('click', function(e){
-      if (e.target === hoja) hoja.close();
-    });
+    boton.addEventListener('click', instalar);
+    document.getElementById('aviso-si').addEventListener('click', instalar);
+    document.getElementById('aviso-no').addEventListener('click', cerrarBarra);
   })();
 </script>
 </body>
