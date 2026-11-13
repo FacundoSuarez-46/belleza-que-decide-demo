@@ -1,4 +1,4 @@
-const CACHE = "bqd-aire-v15";
+const CACHE = "bqd-aire-v16";
 const PRECACHE = ["./manifest.webmanifest", "./favicon.svg"];
 
 self.addEventListener("install", (event) => {
