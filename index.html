@@ -268,11 +268,14 @@
     background:linear-gradient(180deg, #f9ddd9 0%, #f4d8d4 100%);
     overflow:hidden;
   }
-  .deseo-frame img{
-    width:min(100%, 16rem);height:auto;max-height:24rem;
-    object-fit:contain;
+  .deseo-frame img,.deseo-frame video{
+    grid-area:1/1;
+    width:min(100%, 14rem);height:auto;max-width:100%;
+    aspect-ratio:9/16;object-fit:contain;
     filter:drop-shadow(0 22px 36px rgba(58,58,60,.16));
   }
+  .deseo-frame video{opacity:0;pointer-events:none}
+  .deseo-frame.is-live video{opacity:1;transition:opacity 1s ease}
   .deseo-copy{padding:0 var(--pad) calc(2.5rem + var(--bar));max-width:var(--col);margin-inline:auto;width:100%}
   .deseo .folio::after{background:rgba(233,126,164,.35)}
   .deseo h2{margin-bottom:.5rem}
@@ -367,7 +370,7 @@
     html{scroll-behavior:auto}
     *,*::before,*::after{transition:none !important;animation:none !important}
     .photo img,.capitulo img{transform:none;animation:none}
-    .photo video{display:none}
+    .photo video,.deseo-frame video{display:none}
     html.js .reveal{opacity:1;transform:none}
   }
 
@@ -403,7 +406,7 @@
 
     .deseo-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
     .deseo-frame{padding:3.5rem var(--pad)}
-    .deseo-frame img{width:min(100%, 18rem);max-height:28rem}
+    .deseo-frame img,.deseo-frame video{width:min(100%, 15rem)}
     .deseo-copy{display:flex;flex-direction:column;justify-content:center;padding:3.5rem var(--pad);max-width:32rem;margin:0}
 
     .tocador{padding:6rem 0 2rem}
@@ -463,7 +466,7 @@
 
   <section class="capitulo" id="compania" aria-labelledby="t-cap">
     <figure>
-      <img src="./img/capitulo-mesa.jpg?v=17" alt="Cuatro mujeres en la mesa de la clase" width="1280" height="720" loading="lazy">
+      <img src="./img/capitulo-compania.jpg?v=18" alt="Tres mujeres de distintas edades, juntas en un sillón" width="1376" height="768" loading="lazy">
     </figure>
     <div class="capitulo-text">
       <p class="mes">Primavera · octubre</p>
@@ -482,11 +485,11 @@
       <div class="revista" role="region" aria-label="Páginas del Look de octubre" tabindex="0">
         <div class="revista-track">
           <figure>
-            <img src="./img/look-mesa.jpg?v=17" alt="Cuatro mujeres alrededor de la mesa" width="1280" height="720" loading="lazy">
+            <img src="./img/look-mesa.jpg?v=18" alt="Mesa con labiales y una flor, sin marca" width="1376" height="768" loading="lazy">
             <figcaption>La mesa</figcaption>
           </figure>
           <figure>
-            <img src="./img/look-pase.jpg?v=17" alt="Se pasan un labial en la mesa" width="1280" height="720" loading="lazy">
+            <img src="./img/look-pase.jpg?v=18" alt="Dos manos de distinta edad se pasan un labial" width="1376" height="768" loading="lazy">
             <figcaption>El pase</figcaption>
           </figure>
           <figure class="tono">
@@ -515,7 +518,8 @@
   <section class="deseo reveal" id="productos" aria-labelledby="t-prod">
     <div class="deseo-grid">
       <figure class="deseo-frame">
-        <img src="./img/deseo.jpg?v=13" alt="Labial del Look de octubre" width="900" height="1200" loading="lazy">
+        <img src="./img/labial-poster.jpg?v=18" alt="Labial abierto, sin marca" width="720" height="1280">
+        <video class="labial-film" muted loop playsinline preload="none" aria-hidden="true"></video>
       </figure>
       <div class="deseo-copy">
         <p class="folio"><span class="n">03</span><span>Para mirar</span></p>
@@ -618,7 +622,7 @@
   <section class="unidad reveal" id="equipo" aria-labelledby="t-equipo">
     <div class="col">
       <figure class="grupo">
-        <img src="./img/sumate-mesa.jpg?v=17" alt="La más grande mira el labial que le alcanzaron" width="1280" height="720" loading="lazy">
+        <img src="./img/sumate-puerta.jpg?v=18" alt="Una joven y una mujer mayor, conversando en una puerta" width="1376" height="768" loading="lazy">
       </figure>
       <h2 id="t-equipo">Sumate al <span class="q">equipo</span></h2>
       <p class="body">Si querés sumarte a vender, escribinos.</p>
@@ -717,6 +721,28 @@
       if (desktop.addEventListener) desktop.addEventListener('change', function(){ load(); play(); });
     })();
 
+    (function labialFilm(){
+      var frame = document.querySelector('.deseo-frame');
+      var film = document.querySelector('.labial-film');
+      if (!frame || !film) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      film.setAttribute('webkit-playsinline', '');
+      film.src = './img/labial.mp4?v=18';
+      function play(){ var p = film.play(); if (p && p.catch) p.catch(function(){}); }
+      film.addEventListener('playing', function(){ frame.classList.add('is-live'); });
+      var vis = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (entry.isIntersecting) play();
+          else film.pause();
+        });
+      }, {threshold: 0.35});
+      vis.observe(frame);
+      document.addEventListener('visibilitychange', function(){
+        if (document.hidden) film.pause();
+        else play();
+      });
+    })();
+
     var tabs = document.querySelectorAll('.tabbar a[data-t]');
     var ids = ['inicio','look','clase'];
     function setActive(){
@@ -750,7 +776,7 @@
     }
 
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js?v=17');
+      navigator.serviceWorker.register('./sw.js?v=18');
     }
 
     var seccion = document.getElementById('instalar');
