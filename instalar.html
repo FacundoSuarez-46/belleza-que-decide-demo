@@ -108,7 +108,8 @@
     </li>
   </ol>
   <p class="nota">En Android el aviso sale solo, la primera vez. Si no aparece: Chrome, menú, Instalar app.</p>
-  <a class="volver" href="./">Volver</a>
+  <a class="volver" id="volver" href="./">Volver</a>
+<script>if (document.referrer.indexOf("/ritual") !== -1) document.getElementById("volver").href = "./ritual/";</script>
 </main>
 </body>
 </html>
