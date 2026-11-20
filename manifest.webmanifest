@@ -1,7 +1,7 @@
 {
   "name": "Belleza que Decide",
   "short_name": "Belleza",
-  "description": "Look, clase y equipo. Young, Río Negro.",
+  "description": "Experiencia de belleza, Look y equipo. Young, Río Negro.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

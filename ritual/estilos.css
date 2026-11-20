@@ -127,6 +127,7 @@ p{margin:0}
   padding-top:calc(var(--mast) + 1rem);padding-bottom:12vh;
 }
 .centro h2{max-width:9ch}
+.centro h2.suelta{max-width:12ch}
 
 .mosaico{display:grid;grid-template-columns:minmax(0,1fr)}
 .puerta{

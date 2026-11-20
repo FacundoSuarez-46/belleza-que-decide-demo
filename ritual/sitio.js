@@ -100,7 +100,7 @@
   window.addEventListener('scroll', scrolled, { passive: true });
   apply();
 
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=1');
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=2');
 
   var seccion = document.getElementById('instalar');
   var boton = document.getElementById('btn-instalar');
@@ -129,7 +129,7 @@
       aviso.userChoice.finally(function () { aviso = null; if (barra) barra.hidden = true; });
       return;
     }
-    window.location.href = '../instalar.html';
+    window.location.href = './instalar.html';
   }
   if (esIOS) mostrarBarra();
   window.addEventListener('beforeinstallprompt', function (e) {

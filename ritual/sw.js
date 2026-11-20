@@ -1,5 +1,5 @@
-const CACHE = "bqd-ritual-v1";
-const PRECACHE = ["./manifest.webmanifest", "../favicon.svg"];
+const CACHE = "bqd-ritual-v2";
+const PRECACHE = ["./manifest.webmanifest", "./favicon.svg"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(PRECACHE)));
