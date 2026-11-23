@@ -92,7 +92,7 @@
     }
 
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js?v=21');
+      navigator.serviceWorker.register('./sw.js?v=22');
     }
 
     var seccion = document.getElementById('instalar');

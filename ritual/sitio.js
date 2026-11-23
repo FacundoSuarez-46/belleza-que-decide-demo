@@ -100,7 +100,7 @@
   window.addEventListener('scroll', scrolled, { passive: true });
   apply();
 
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=2');
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=3');
 
   var seccion = document.getElementById('instalar');
   var boton = document.getElementById('btn-instalar');

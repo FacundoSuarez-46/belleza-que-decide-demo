@@ -1,6 +1,6 @@
 # Belleza que Decide
 
-Página de Silvia, directora de belleza en Young. Tres puertas: Inicio, El tocador y Novedades. Se puede instalar en el teléfono. No es una tienda.
+Página de Silvia, directora de belleza en Young. Tres puertas: Inicio, Skincare y Novedades. Se puede instalar en el teléfono. No es una tienda.
 
 Antes de cambiar nada, leer [CONTEXTO.md](CONTEXTO.md). Ahí está el trato, el feedback de Silvia con día y hora, y cómo pasó de las plantillas de v0 a esta página. Si la página y ese archivo no coinciden, manda el archivo.
 
