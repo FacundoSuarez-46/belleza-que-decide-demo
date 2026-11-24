@@ -1,4 +1,4 @@
-const CACHE = "bqd-aire-v23";
+const CACHE = "bqd-aire-v24";
 const PRECACHE = ["./manifest.webmanifest", "./favicon.svg"];
 
 self.addEventListener("install", (event) => {
@@ -17,6 +17,7 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
+  if (new URL(event.request.url).pathname.includes("/img/ofertas/")) return;
   event.respondWith(
     fetch(event.request)
       .then((response) => {

@@ -211,7 +211,7 @@
     })();
 
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js?v=23');
+      navigator.serviceWorker.register('./sw.js?v=24');
     }
 
     var seccion = document.getElementById('instalar');

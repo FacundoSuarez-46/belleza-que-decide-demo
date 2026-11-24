@@ -564,7 +564,16 @@
     position:relative;
     transition:transform .45s ease;
   }
-  .v-card img{width:100%;height:100%;object-fit:contain;display:block}
+  .v-card img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    max-width:none;
+    object-fit:contain;
+    object-position:center;
+    display:block;
+  }
   .v-card figure::after{
     content:"";
     position:absolute;
