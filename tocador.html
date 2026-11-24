@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./estilos.css?v=22">
+<link rel="stylesheet" href="./estilos.css?v=23">
 </head>
 <body>
 
@@ -40,6 +40,42 @@
       <h2 id="t-tocador">Para mirar de cerca</h2>
       <p class="body">Piel, color, perfume y cuerpo. Se mira acá. Se pide por WhatsApp.</p>
     </div>
+
+    <!-- Ofertas del mes. Para el mes que viene: cambiar la foto en img/ofertas y el nombre.
+         Cuando haya texto: data-sirve, data-lineas (separadas por |) y data-texto. -->
+    <section class="vitrina" id="vitrina" aria-labelledby="t-vitrina">
+      <div class="ancho">
+        <p class="folio"><span>Este mes</span></p>
+        <h2 id="t-vitrina">Lo que está <em>ahora.</em></h2>
+      </div>
+      <div class="vitrina-rail" tabindex="0" aria-label="Ofertas de este mes">
+        <ul class="vitrina-track">
+          <li class="v-sep" aria-hidden="true"><span>Fragancias</span></li>
+          <li><button type="button" class="v-card" data-kicker="Fragancia"><figure><img src="./img/ofertas/velvet-scent.jpg" alt="Velvet Scent" width="800" height="1200"></figure><span class="v-nombre">Velvet Scent</span></button></li>
+          <li><button type="button" class="v-card" data-kicker="Fragancia"><figure><img src="./img/ofertas/dream-fearlessly.jpg" alt="Dream Fearlessly" width="800" height="1200"></figure><span class="v-nombre">Dream Fearlessly</span></button></li>
+          <li><button type="button" class="v-card" data-kicker="Fragancia"><figure><img src="./img/ofertas/love-fearlessly.jpg" alt="Love Fearlessly" width="800" height="1200"></figure><span class="v-nombre">Love Fearlessly</span></button></li>
+          <li><button type="button" class="v-card" data-kicker="Fragancia"><figure><img src="./img/ofertas/joy-emotion.jpg" alt="Joy Emotion Scent" width="800" height="1200"></figure><span class="v-nombre">Joy Emotion Scent</span></button></li>
+          <li><button type="button" class="v-card" data-kicker="Fragancia"><figure><img src="./img/ofertas/garden-scent.jpg" alt="Garden Scent" width="800" height="1200"></figure><span class="v-nombre">Garden Scent</span></button></li>
+          <li><button type="button" class="v-card" data-kicker="Fragancia"><figure><img src="./img/ofertas/embrace-ella.jpg" alt="Embrace, para ella" width="800" height="1200"></figure><span class="v-nombre">Embrace, para ella</span></button></li>
+          <li><button type="button" class="v-card" data-kicker="Fragancia"><figure><img src="./img/ofertas/embrace-el.jpg" alt="Embrace, para él" width="800" height="1200"></figure><span class="v-nombre">Embrace, para él</span></button></li>
+          <li><button type="button" class="v-card" data-kicker="Fragancia"><figure><img src="./img/ofertas/authentic-hero.jpg" alt="Authentic Hero" width="800" height="1200"></figure><span class="v-nombre">Authentic Hero</span></button></li>
+          <li><button type="button" class="v-card" data-kicker="Fragancia"><figure><img src="./img/ofertas/authentic-hero-style.jpg" alt="Authentic Hero Style" width="800" height="1200"></figure><span class="v-nombre">Authentic Hero Style</span></button></li>
+          <li><button type="button" class="v-card" data-kicker="Fragancia"><figure><img src="./img/ofertas/authentic-hero-bold.jpg" alt="Authentic Hero Bold" width="800" height="1200"></figure><span class="v-nombre">Authentic Hero Bold</span></button></li>
+          <li class="v-sep" aria-hidden="true"><span>Labios</span></li>
+          <li><button type="button" class="v-card" data-kicker="Labios"><figure><img src="./img/ofertas/labial-mate.jpg" alt="Labial líquido mate" width="800" height="1200"></figure><span class="v-nombre">Labial líquido mate</span></button></li>
+          <li><button type="button" class="v-card" data-kicker="Labios"><figure><img src="./img/ofertas/brillo-labios.jpg" alt="Brillo de labios" width="800" height="1200"></figure><span class="v-nombre">Brillo de labios</span></button></li>
+          <li><button type="button" class="v-card" data-kicker="Labios"><figure><img src="./img/ofertas/semi-shine.jpg" alt="Semi Shine" width="800" height="1200"></figure><span class="v-nombre">Semi Shine</span></button></li>
+          <li><button type="button" class="v-card" data-kicker="Labios"><figure><img src="./img/ofertas/delineador-lapiz.jpg" alt="Delineador y lápiz" width="800" height="1200"></figure><span class="v-nombre">Delineador y lápiz</span></button></li>
+          <li><button type="button" class="v-card" data-kicker="Labios"><figure><img src="./img/ofertas/semi-mate.jpg" alt="Semi Mate" width="800" height="1200"></figure><span class="v-nombre">Semi Mate</span></button></li>
+          <li class="v-sep" aria-hidden="true"><span>Piel</span></li>
+          <li><button type="button" class="v-card" data-kicker="Piel"><figure><img src="./img/ofertas/timewise-repair.jpg" alt="TimeWise Repair" width="800" height="1200"></figure><span class="v-nombre">TimeWise Repair</span></button></li>
+          <li><button type="button" class="v-card" data-kicker="Piel"><figure><img src="./img/ofertas/rutina-caja.jpg" alt="La rutina en una caja" width="800" height="1200"></figure><span class="v-nombre">La rutina en una caja</span></button></li>
+          <li><button type="button" class="v-card" data-kicker="Regalo"><figure><img src="./img/ofertas/regalos.jpg" alt="Los regalos" width="800" height="1200"></figure><span class="v-nombre">Los regalos</span></button></li>
+        </ul>
+      </div>
+      <div class="vitrina-puntos" id="vitrina-puntos"></div>
+    </section>
+
     <ul class="puertas">
       <li><a href="#piel"><figure><img src="./img/piel-mesa.jpg?v=14" alt="Rutina de piel, sin marca" width="1280" height="720"></figure><strong>Piel</strong><em>Brilla o tira</em></a></li>
       <li><a href="#color"><figure><img src="./img/color-labios.jpg?v=14" alt="Tres labiales sin marca" width="864" height="1152"></figure><strong>Color</strong><em>El labial del mes</em></a></li>
@@ -168,6 +204,29 @@
   </ul>
 </nav>
 
-<script src="./sitio.js?v=22"></script>
+<dialog class="ficha" id="ficha" aria-labelledby="ficha-nombre">
+  <span class="marca m1" aria-hidden="true"></span>
+  <span class="marca m2" aria-hidden="true"></span>
+  <span class="marca m3" aria-hidden="true"></span>
+  <span class="marca m4" aria-hidden="true"></span>
+  <button type="button" class="ficha-cerrar" id="ficha-cerrar">Cerrar</button>
+  <div class="ficha-marco">
+    <button type="button" class="ficha-foto" id="ficha-foto" aria-label="Ver el afiche completo">
+      <img id="ficha-img" alt="">
+    </button>
+    <div class="ficha-copy" id="ficha-copy">
+      <p class="folio"><span id="ficha-kicker">Este mes</span></p>
+      <h2 id="ficha-nombre"></h2>
+      <p class="ficha-etiq" id="ficha-etiq-sirve" hidden>Para qué sirve</p>
+      <p class="body" id="ficha-sirve" hidden></p>
+      <p class="ficha-etiq" id="ficha-etiq-lineas" hidden>Características</p>
+      <ul class="ficha-lineas" id="ficha-lineas" hidden></ul>
+      <p class="body" id="ficha-texto" hidden></p>
+      <a class="act" id="ficha-wa" target="_blank" rel="noopener"><span class="u">Quiero este</span><span class="arr" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</dialog>
+
+<script src="./sitio.js?v=23"></script>
 </body>
 </html>

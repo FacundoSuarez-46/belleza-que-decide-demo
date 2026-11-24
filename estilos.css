@@ -494,3 +494,243 @@
     footer{padding-bottom:5rem}
     section[id]{scroll-margin-top:4.75rem}
   }
+
+  .vitrina{
+    position:relative;
+    margin:2.25rem 0 0;
+    padding:2.4rem 0 1.4rem;
+    background-color:#f9ddd9;
+    background-image:radial-gradient(rgba(233,126,164,.18) 1px, transparent 1px);
+    background-size:14px 14px;
+    min-width:0;
+  }
+  .vitrina h2{font-weight:300}
+  .vitrina h2 em{font-style:italic;font-weight:300}
+  .vitrina-rail{
+    --edge:max(var(--pad), calc((100% - min(100%, 76rem)) / 2 + var(--pad)));
+    overflow-x:auto;
+    scroll-snap-type:x proximity;
+    scroll-padding-inline:var(--edge);
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+    min-width:0;
+  }
+  .vitrina-rail::-webkit-scrollbar{display:none}
+  .vitrina-track{
+    display:flex;
+    align-items:stretch;
+    gap:1rem;
+    width:max-content;
+    max-width:none;
+    margin:0;
+    padding:1.15rem var(--edge) 1.35rem;
+    list-style:none;
+  }
+  .v-sep{
+    flex:0 0 auto;
+    align-self:center;
+    margin:0 .15rem;
+    font-size:.6875rem;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--rosa);
+    writing-mode:vertical-rl;
+    transform:rotate(180deg);
+  }
+  .v-card{
+    flex:0 0 min(78vw, 16.5rem);
+    width:min(78vw, 16.5rem);
+    min-width:0;
+    scroll-snap-align:start;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:.75rem;
+    margin:0;
+    padding:0;
+    border:0;
+    background:none;
+    color:inherit;
+    font:inherit;
+    text-align:left;
+    cursor:pointer;
+  }
+  .v-card figure{
+    margin:0;
+    width:100%;
+    aspect-ratio:2/3;
+    overflow:hidden;
+    background:#fff;
+    position:relative;
+    transition:transform .45s ease;
+  }
+  .v-card img{width:100%;height:100%;object-fit:contain;display:block}
+  .v-card figure::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border:1px solid var(--rosa);
+    opacity:0;
+    transition:opacity .35s ease;
+    pointer-events:none;
+  }
+  .v-nombre{
+    font-family:var(--serif);
+    font-size:1.15rem;
+    line-height:1.2;
+    color:var(--fuerte);
+    background-image:linear-gradient(var(--rosa), var(--rosa));
+    background-repeat:no-repeat;
+    background-size:0 1px;
+    background-position:0 100%;
+    padding-bottom:.15rem;
+    transition:background-size .35s ease;
+  }
+  @media (hover:hover){
+    .v-card:hover figure,
+    .v-card:focus-visible figure{transform:translateY(-6px)}
+    .v-card:hover figure::after,
+    .v-card:focus-visible figure::after{opacity:1}
+    .v-card:hover .v-nombre,
+    .v-card:focus-visible .v-nombre{background-size:100% 1px}
+  }
+  html.js .v-card{opacity:0}
+  html.js .vitrina.is-in .v-card{
+    animation:v-sube .6s ease forwards;
+    animation-delay:calc(var(--i, 0) * 45ms);
+  }
+  @keyframes v-sube{
+    from{opacity:0;transform:translateY(14px)}
+    to{opacity:1;transform:none}
+  }
+  .vitrina-puntos{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:.4rem;
+    padding:.15rem var(--pad) .35rem;
+  }
+  .vitrina-puntos button{
+    width:6px;height:6px;padding:0;border:0;border-radius:50%;
+    background:rgba(233,126,164,.35);cursor:pointer;
+  }
+  .vitrina-puntos button[aria-current="true"]{background:var(--rosa)}
+  @media (min-width:900px){
+    .vitrina-puntos{display:none}
+  }
+
+  .ficha{
+    border:0;
+    padding:0;
+    margin:0;
+    width:100%;
+    height:100dvh;
+    max-width:100%;
+    max-height:100dvh;
+    overflow:hidden;
+    background:#f9ddd9;
+    color:var(--texto);
+  }
+  .ficha::backdrop{background:rgba(58,58,60,.28)}
+  .ficha-marco{
+    height:100%;
+    max-width:100%;
+    display:grid;
+    grid-template-columns:minmax(0,1fr);
+    overflow:auto;
+    min-width:0;
+  }
+  .ficha-foto{
+    margin:0;
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    padding:3.5rem var(--pad) 1rem;
+    border:0;
+    background:#fff;
+    cursor:zoom-in;
+    overflow:hidden;
+  }
+  .ficha-foto img{
+    width:100%;
+    max-width:100%;
+    height:auto;
+    max-height:58dvh;
+    object-fit:contain;
+    display:block;
+    margin-inline:auto;
+  }
+  .ficha-copy{
+    position:relative;
+    padding:1.5rem var(--pad) calc(2rem + env(safe-area-inset-bottom));
+    background-color:#f9ddd9;
+    background-image:radial-gradient(rgba(233,126,164,.18) 1px, transparent 1px);
+    background-size:14px 14px;
+    min-width:0;
+  }
+  .ficha-copy h2{
+    font-size:clamp(2.1rem, 5vw, 3.4rem);
+    font-weight:300;
+    line-height:1.05;
+    margin-bottom:.8rem;
+  }
+  .ficha-etiq{
+    margin:1.15rem 0 .35rem;
+    font-size:.6875rem;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--rosa);
+    font-weight:500;
+  }
+  .ficha-lineas{list-style:none;margin:0;padding:0}
+  .ficha-lineas li{
+    padding:.7rem 0;
+    border-top:1px solid rgba(233,126,164,.45);
+    max-width:36ch;
+  }
+  .ficha-lineas li:last-child{border-bottom:1px solid rgba(233,126,164,.45)}
+  .ficha-copy .act{margin-top:1.35rem}
+  .ficha-cerrar{
+    position:absolute;
+    top:max(.85rem, env(safe-area-inset-top));
+    right:var(--pad);
+    z-index:6;
+    border:0;
+    background:none;
+    cursor:pointer;
+    font:600 .9375rem/1 var(--sans);
+    color:var(--fuerte);
+    min-height:44px;
+    border-bottom:1px solid var(--rosa);
+    padding:0 0 .15rem;
+  }
+  .marca{position:absolute;width:14px;height:14px;z-index:4;pointer-events:none}
+  .m1{top:12px;left:12px;border-top:1px solid var(--rosa);border-left:1px solid var(--rosa)}
+  .m2{top:12px;right:12px;border-top:1px solid var(--rosa);border-right:1px solid var(--rosa)}
+  .m3{bottom:12px;left:12px;border-bottom:1px solid var(--rosa);border-left:1px solid var(--rosa)}
+  .m4{bottom:12px;right:12px;border-bottom:1px solid var(--rosa);border-right:1px solid var(--rosa)}
+  .ficha.is-sangre .ficha-foto{
+    position:fixed;
+    inset:0;
+    z-index:5;
+    display:grid;
+    place-items:center;
+    padding:3.5rem 1rem;
+    cursor:zoom-out;
+  }
+  .ficha.is-sangre .ficha-foto img{width:min(100%, 40rem);max-height:92dvh}
+  .ficha[open] .ficha-copy > *{animation:v-sube .5s ease both}
+  .ficha[open] .ficha-copy > *:nth-child(2){animation-delay:.08s}
+  .ficha[open] .ficha-copy > *:nth-child(3){animation-delay:.14s}
+  .ficha[open] .ficha-copy > *:nth-child(4){animation-delay:.2s}
+  @media (min-width:900px){
+    .v-card{flex-basis:18rem;width:18rem}
+    .ficha-marco{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);overflow:hidden}
+    .ficha-copy{overflow:auto;padding:4.5rem 2.5rem 3rem}
+    .ficha-foto{display:grid;place-items:center;padding:2.5rem 2rem}
+    .ficha-foto img{max-height:86dvh}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html.js .v-card{opacity:1;animation:none}
+    .v-card figure,.v-nombre,.ficha[open] .ficha-copy > *{transition:none;animation:none}
+  }
