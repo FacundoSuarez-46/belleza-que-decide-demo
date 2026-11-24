@@ -110,10 +110,27 @@
       var cerrar = document.getElementById('ficha-cerrar');
       var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+      function reintentar(imagen){
+        if (!imagen || imagen.dataset.reintento) return;
+        imagen.dataset.reintento = '1';
+        var limpio = (imagen.getAttribute('src') || '').split('?')[0];
+        if (!limpio) return;
+        imagen.src = limpio + '?r=' + Date.now();
+      }
       cards.forEach(function(card, i){
         card.style.setProperty('--i', String(i));
         card.addEventListener('click', function(){ abrir(card); });
+        var foto = card.querySelector('img');
+        if (foto) foto.addEventListener('error', function(){ reintentar(foto); });
       });
+      if (navigator.serviceWorker) {
+        navigator.serviceWorker.addEventListener('controllerchange', function(){
+          cards.forEach(function(card){
+            var foto = card.querySelector('img');
+            if (foto && !foto.naturalWidth) reintentar(foto);
+          });
+        });
+      }
 
       if (!reduce) {
         var visto = new IntersectionObserver(function(entries){
@@ -211,7 +228,7 @@
     })();
 
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js?v=24');
+      navigator.serviceWorker.register('./sw.js?v=25');
     }
 
     var seccion = document.getElementById('instalar');
