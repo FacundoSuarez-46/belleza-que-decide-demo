@@ -91,6 +91,24 @@
       document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('is-in'); });
     }
 
+    (function videoSumate(){
+      var tapa = document.getElementById('video-tapa');
+      var marco = document.getElementById('video-marco');
+      if (!tapa || !marco) return;
+      tapa.addEventListener('click', function(){
+        var id = tapa.getAttribute('data-yt');
+        if (!id || marco.childElementCount) return;
+        var frame = document.createElement('iframe');
+        frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+        frame.title = 'Intro al negocio';
+        frame.allow = 'autoplay; encrypted-media; picture-in-picture';
+        frame.allowFullscreen = true;
+        marco.appendChild(frame);
+        marco.hidden = false;
+        tapa.hidden = true;
+      });
+    })();
+
     (function vitrina(){
       var rail = document.querySelector('.vitrina-rail');
       var ficha = document.getElementById('ficha');
@@ -228,7 +246,7 @@
     })();
 
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js?v=25');
+      navigator.serviceWorker.register('./sw.js?v=26');
     }
 
     var seccion = document.getElementById('instalar');
