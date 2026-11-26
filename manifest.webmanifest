@@ -1,7 +1,7 @@
 {
   "name": "Belleza que Decide",
   "short_name": "Belleza",
-  "description": "Experiencia de belleza, Look y equipo. Young, Río Negro.",
+  "description": "Experiencia de belleza gratuita en Young. También Maldonado, Punta del Este y Paysandú.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

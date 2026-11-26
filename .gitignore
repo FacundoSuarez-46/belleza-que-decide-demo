@@ -1,2 +1,7 @@
 .DS_Store
 .vercel
+.env
+servidor/.env
+servidor/node_modules
+KEYS.md
+keys.md

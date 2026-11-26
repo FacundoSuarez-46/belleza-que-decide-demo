@@ -1,0 +1,11 @@
+{
+  "name": "belleza-guia",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "openai": "^5.12.2"
+  }
+}

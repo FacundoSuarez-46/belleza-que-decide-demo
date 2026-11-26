@@ -5,19 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f2e8e6">
 <title>Belleza que Decide · Silvia Garbarino · Young</title>
-<meta name="description" content="Experiencia de belleza y facial en Young. Prueba gratis, de a una o con amigas. También Maldonado, Punta del Este y Paysandú.">
+<meta name="description" content="Silvia Garbarino. Experiencia de belleza gratuita en Young: facial individual o con amigas. También Maldonado, Punta del Este y Paysandú.">
 <link rel="icon" href="./favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="./apple-touch-icon.png">
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./estilos.css?v=26">
+<link rel="stylesheet" href="./estilos.css?v=35">
 </head>
 <body>
 
 <header class="mast">
-  <nav class="mast-side mast-left" aria-label="Secciones">
+  <nav class="mast-pages" aria-label="Secciones">
     <ul>
       <li><a href="./" aria-current="page">Inicio</a></li>
       <li><a href="./tocador.html">Skincare</a></li>
@@ -25,152 +25,257 @@
     </ul>
   </nav>
   <a class="mast-mark" href="./" aria-label="Belleza que Decide"><span>Belleza</span><span class="wm-q">que</span><span>Decide</span></a>
-  <nav class="mast-side mast-right" aria-label="Más">
-    <ul>
-      <li><a href="#equipo">Sumate</a></li>
-      <li><a href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20%C2%BFc%C3%B3mo%20est%C3%A1s%3F" target="_blank" rel="noopener">WhatsApp</a></li>
-    </ul>
-  </nav>
+  <div class="mast-tools">
+    <a class="mast-sumate" href="#equipo">Sumate</a>
+    <a class="btn-wa mast-wa" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20hacerte%20una%20consulta." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
+      <span>WhatsApp</span>
+    </a>
+  </div>
 </header>
 
 <main>
   <p class="seo" aria-hidden="true">Silvia Garbarino. Experiencia de belleza y facial en Young, Río Negro. También en Maldonado, Punta del Este y Paysandú.</p>
+
   <section class="hero" id="inicio" aria-labelledby="t-hero">
     <figure class="photo">
       <picture>
-        <img src="./img/hero-poster-16x9.jpg?v=16" alt="Cuatro mujeres en una mesa, pasándose un labial" width="1280" height="720" fetchpriority="high">
+        <img src="./img/hero-poster-16x9.jpg?v=16" alt="Cuatro mujeres en una mesa, compartiendo un labial" width="1280" height="720" fetchpriority="high">
       </picture>
       <video class="hero-film" muted loop playsinline preload="none" aria-hidden="true"></video>
+      <button type="button" class="hero-pausa" id="hero-pausa" aria-pressed="false" aria-label="Pausar el video"><svg class="ico-pausa" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14"></rect><rect x="14" y="5" width="4" height="14"></rect></svg><svg class="ico-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"></path></svg></button>
     </figure>
-    <div class="hero-text">
-      <p class="hero-kicker">Young</p>
-      <h1 id="t-hero">Mujeres que deciden.</h1>
-      <a class="descubrir" href="#compania">Descubrir</a>
+    <div class="hero-panel">
+      <p class="hero-kicker">Young, Uruguay</p>
+      <h1 id="t-hero"><span class="linea">Mujeres que</span><span class="linea">deciden.</span></h1>
+      <p class="hero-lead">Descubrí nuevas formas de cuidarte y disfrutá de una experiencia de belleza gratuita, sola o con amigas.</p>
+      <div class="hero-actions">
+        <a class="btn" href="https://wa.me/59899365404?text=%C2%A1Hola!%20Me%20gustar%C3%ADa%20coordinar%20una%20experiencia%20de%20belleza%20gratuita.%20%C2%BFPodemos%20arreglar%20un%20horario%3F" target="_blank" rel="noopener">Reservá tu experiencia gratuita</a>
+        <a class="btn btn-sec" href="#experiencias">Conocé las experiencias</a>
+      </div>
     </div>
   </section>
 
-  <section class="capitulo" id="compania" aria-labelledby="t-cap">
-    <figure>
-      <img src="./img/capitulo-compania.jpg?v=18" alt="Tres mujeres de distintas edades, juntas en un sillón" width="1376" height="768" loading="lazy">
-    </figure>
-    <div class="capitulo-text">
-      <p class="mes">Primavera · octubre</p>
-      <h2 id="t-cap">La belleza es mejor <em>en compañía.</em></h2>
+  <section class="experiencias" id="experiencias" aria-labelledby="t-exp">
+    <div class="exp-head">
+      <p class="folio"><span>Experiencias</span></p>
+      <h2 id="t-exp">Un momento para vos, a tu manera.</h2>
+      <p class="lead">Disfrutá de una experiencia de belleza gratuita, sola o acompañada. Elegí cómo querés vivirla y coordinamos un horario que te quede cómodo.</p>
     </div>
-  </section>
 
-  <div class="sheet">
-    <section class="experiencia reveal" id="experiencia" aria-labelledby="t-exp">
-      <div class="ancho">
-        <p class="folio"><span>Experiencia</span></p>
-        <h2 id="t-exp">Experiencia de belleza</h2>
-        <p class="lead">Hay un antes y un después en el espejo. La prueba es gratis. Oficina en Young, y también en una casa.</p>
-        <div class="caminos">
-          <article>
-            <h3>Facial</h3>
-            <p>De a una, en la oficina. 45 minutos. Se prueba un tratamiento y se arma una primera rutina.</p>
-            <p class="fit">Higiene, oxigenación, rehidratación, o la línea coreana.</p>
-            <a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20un%20facial%20de%20a%20una%20en%20Young.%20%C2%BFQu%C3%A9%20hora%20ten%C3%A9s%3F" target="_blank" rel="noopener"><span class="u">Quiero hora</span><span class="arr" aria-hidden="true">→</span></a>
-          </article>
-          <article>
-            <h3>Con amigas</h3>
-            <p>De 2 a 6. Una hora a una hora y media. En la oficina o en una casa. Todas prueban. Nadie está obligada a comprar.</p>
-            <a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20una%20experiencia%20de%20belleza%20con%20amigas%2C%20de%202%20a%206.%20%C2%BFCu%C3%A1ndo%20se%20puede%3F" target="_blank" rel="noopener"><span class="u">Quiero ir con amigas</span><span class="arr" aria-hidden="true">→</span></a>
-          </article>
-        </div>
-        <div class="casa-linea">
-          <p>Si la hacés en tu casa, invitás a tus amigas. Hay un regalo de bienvenida y un beneficio por lo que se vende.</p>
-          <a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20hacer%20una%20experiencia%20en%20mi%20casa%2C%20con%20amigas." target="_blank" rel="noopener"><span class="u">Quiero hacerla en casa</span><span class="arr" aria-hidden="true">→</span></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="antes reveal" id="antes" aria-labelledby="t-antes">
-      <div class="col">
-        <p class="folio"><span id="t-antes">Antes de venir</span></p>
-        <ul class="antes-lista">
-          <li>Pedí hora. No hay un día fijo.</li>
-          <li>Facial, 45 minutos. Con amigas, hasta una hora y media.</li>
-          <li>La prueba es gratis.</li>
-          <li>Desde los 12. Si es menor, viene con la mamá o con una hermana mayor.</li>
-          <li>Se retira en la oficina, ella lo lleva, o hay envío a todo el país. Desde 2.000 pesos el envío no se cobra. Se paga con tarjeta, transferencia o depósito.</li>
-          <li>Si el frasco se rompe o el producto no sale, la empresa lo cambia por otro.</li>
-        </ul>
-        <a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20pasarte%20a%20alguien." target="_blank" rel="noopener"><span class="u">Quiero pasarte a alguien</span><span class="arr" aria-hidden="true">→</span></a>
-      </div>
-    </section>
-
-    <section class="encuentros reveal" aria-labelledby="t-enc">
-      <div class="col">
-        <p class="folio"><span id="t-enc">Después se puede seguir</span></p>
-        <ul class="enc-lista">
-          <li><a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20el%20encuentro%20del%20cuidado%20de%20la%20piel." target="_blank" rel="noopener"><span class="u">Piel</span><span class="arr" aria-hidden="true">→</span></a></li>
-          <li><a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20el%20encuentro%20de%20maquillaje." target="_blank" rel="noopener"><span class="u">Maquillaje</span><span class="arr" aria-hidden="true">→</span></a></li>
-          <li><a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20el%20encuentro%20de%20fragancias." target="_blank" rel="noopener"><span class="u">Fragancias</span><span class="arr" aria-hidden="true">→</span></a></li>
-          <li><a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20el%20encuentro%20de%20manos%20y%20cuerpo." target="_blank" rel="noopener"><span class="u">Manos y cuerpo</span><span class="arr" aria-hidden="true">→</span></a></li>
-        </ul>
-      </div>
-    </section>
-  </div>
-
-  <section class="equipo reveal" id="equipo" aria-labelledby="t-equipo">
-    <div class="equipo-top">
-      <figure class="grupo">
-        <img src="./img/sumate-puerta.jpg?v=18" alt="Una joven y una mujer mayor, conversando en una puerta" width="1376" height="768" loading="lazy">
+    <article class="exp-personal">
+      <figure>
+        <img src="./img/piel-mesa.jpg?v=14" alt="Rutina de cuidado facial: limpiador, crema y sérum" width="1280" height="720">
       </figure>
-      <div class="equipo-intro">
-        <h2 id="t-equipo">Sumate al <span class="q">equipo</span></h2>
-        <p class="body">Para la que quiere empezar a vender. No hace falta tener experiencia.</p>
+      <div class="exp-copy">
+        <h3>Tu facial personalizado.</h3>
+        <p class="meta"><span data-ico="clock">45 minutos</span><span data-ico="user">Individual</span><span data-ico="heart">Gratuita</span><span data-ico="pin">En la oficina</span></p>
+        <p>Conocé tu piel, probá diferentes productos y descubrí una rutina de cuidado pensada para vos.</p>
+        <p class="fit">Podés pedir higiene, oxigenación, rehidratación o la línea coreana.</p>
+        <a class="btn" href="https://wa.me/59899365404?text=%C2%A1Hola!%20Me%20gustar%C3%ADa%20coordinar%20una%20experiencia%20facial%20gratuita.%20%C2%BFPodemos%20arreglar%20un%20horario%3F" target="_blank" rel="noopener">Reservá tu facial gratuito</a>
       </div>
-    </div>
-    <div class="equipo-cine">
-      <p class="body">Mirá estos 3 minutos. Es la intro al negocio.</p>
-      <div class="cine">
-        <button type="button" class="video-tapa" id="video-tapa" data-yt="SZuPhP7B_DA">
-          <img src="./img/sumate-video.jpg" alt="Dos mujeres trabajando juntas. Trabaja a tu manera." width="1600" height="900">
-          <span class="act"><span class="u">Ver</span><span class="arr" aria-hidden="true">→</span></span>
-        </button>
-        <div class="video-marco" id="video-marco" hidden></div>
+    </article>
+
+    <article class="exp-amigas">
+      <figure>
+        <img src="./img/sumate-mesa.jpg?v=18" alt="Mujeres de distintas edades prueban productos juntas" width="1376" height="768">
+      </figure>
+      <div class="exp-copy">
+        <h3>Belleza entre amigas.</h3>
+        <p class="meta"><span data-ico="users">De 2 a 6 personas</span><span data-ico="clock">De 1 hora a 1 hora y media</span><span data-ico="house">Oficina o casa</span></p>
+        <p>Compartí un encuentro, descubrí productos y disfrutá de un momento con tus amigas. Nadie está obligada a comprar.</p>
+        <a class="btn" href="https://wa.me/59899365404?text=%C2%A1Hola!%20Me%20gustar%C3%ADa%20organizar%20una%20experiencia%20de%20belleza%20con%20amigas.%20%C2%BFPodemos%20coordinar%20los%20detalles%3F" target="_blank" rel="noopener">Organizá un encuentro</a>
       </div>
-    </div>
-    <div class="equipo-datos">
-      <p class="folio"><span>Para arrancar</span></p>
-      <p class="equipo-precio">$ 1.000</p>
-      <p class="body">Es el kit y el catálogo. Con eso ya podés empezar. Recibís productos por $ 5.490 y dos folletos del mes.</p>
-      <ul class="antes-lista">
-        <li>Dás la experiencia de belleza, de a una o con amigas.</li>
-        <li>Vendés directo, por mensaje, o cuando alguien repone.</li>
-        <li>Los talleres de maquillaje y de piel, y la capacitación, son sin costo.</li>
-        <li>No estás obligada a hacer un pedido todos los meses.</li>
-      </ul>
-      <a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20vi%20el%20video%20y%20quiero%20arrancar.%20%C2%BFC%C3%B3mo%20sigo%20con%20el%20kit%3F" target="_blank" rel="noopener"><span class="u">Quiero sumarme</span><span class="arr" aria-hidden="true">→</span></a>
+    </article>
+
+    <aside class="exp-casa" id="anfitrionas">
+      <figure>
+        <img src="./img/sumate-puerta.jpg?v=18" alt="Dos mujeres conversando en la puerta de una casa" width="1376" height="768">
+      </figure>
+      <div class="exp-copy">
+        <p class="folio"><span>Sé la anfitriona</span></p>
+        <h3>Tu casa. Tus amigas. Tu momento.</h3>
+        <p>Invitá a tus amigas y disfrutá de una experiencia de belleza en tu propio espacio.</p>
+        <ul class="casa-beneficios">
+          <li><span class="bene-ico" data-ico="gift"></span><div><strong>Un regalo para vos.</strong><span>Recibí un regalo de bienvenida por ser anfitriona.</span></div></li>
+          <li><span class="bene-ico" data-ico="sparkles"></span><div><strong>Beneficios especiales.</strong><span>Según las ventas del encuentro.</span></div></li>
+        </ul>
+        <div class="exp-actions">
+          <a class="btn" href="https://wa.me/59899365404?text=%C2%A1Hola!%20Me%20interesa%20organizar%20una%20experiencia%20de%20belleza%20en%20mi%20casa%20con%20amigas.%20Me%20gustar%C3%ADa%20conocer%20c%C3%B3mo%20funciona." target="_blank" rel="noopener">Quiero ser anfitriona</a>
+          <button type="button" class="text-link" id="compartir-casa" data-ico="share">Compartir esta experiencia</button>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <section class="guia" id="elegir" aria-labelledby="t-guia">
+    <div class="ancho guia-presentacion">
+      <span class="guia-marca" data-ico="sparkles" aria-hidden="true"></span>
+      <div>
+        <p class="folio"><span>Tu guía de belleza</span></p>
+        <h2 id="t-guia">La belleza empieza con vos.</h2>
+        <p class="lead">¿Buscás un producto, una idea de regalo o una experiencia? La guía virtual te ayuda a encontrar por dónde empezar. No reemplaza el mensaje directo.</p>
+        <button type="button" class="btn" id="abrir-guia">Encontrá lo que va con vos</button>
+      </div>
     </div>
   </section>
 
-  <div class="sheet">
-    <section class="instalar" id="instalar" aria-label="Instalar en el teléfono">
-      <div class="col inst-row">
-        <p>Si la dejás en el inicio, te avisamos cuando salga el Look.</p>
-        <button class="act" type="button" id="btn-instalar"><span class="u">Instalar</span><span class="arr" aria-hidden="true">→</span></button>
+  <section class="universos" id="universos" aria-labelledby="t-uni">
+    <div class="ancho">
+      <p class="folio"><span>Skincare</span></p>
+      <h2 id="t-uni">Descubrí tu universo de belleza</h2>
+      <p class="lead">Descubrí productos para cuidar tu piel, expresar tu estilo y armar tus propios rituales.</p>
+      <div class="uni-grid entra">
+        <a class="uni uni-piel" href="./tocador.html#piel">
+          <span class="uni-media"><img src="./img/piel-hidrata.jpg?v=14" alt="" width="1024" height="1024"></span>
+          <div class="uni-copy"><h3>Cuidado de la piel</h3><p>Encontrá el cuidado que mejor se adapte a tu piel.</p><span class="text-link">Ver piel</span></div>
+        </a>
+        <a class="uni uni-maquillaje" href="./tocador.html#color">
+          <span class="uni-media"><img src="./img/color-labios.jpg?v=14" alt="" width="864" height="1152"></span>
+          <div class="uni-copy"><h3>Maquillaje</h3><p>Descubrí colores y productos que acompañen tu estilo.</p><span class="text-link">Ver maquillaje</span></div>
+        </a>
+        <a class="uni uni-fragancias" href="./tocador.html#perfume">
+          <span class="uni-media"><img src="./img/perfume-frasco.jpg?v=14" alt="" width="864" height="1152"></span>
+          <div class="uni-copy"><h3>Fragancias</h3><p>Encontrá aromas que reflejen tu personalidad.</p><span class="text-link">Ver fragancias</span></div>
+        </a>
+        <a class="uni uni-cuerpo" href="./tocador.html#cuerpo">
+          <span class="uni-media"><img src="./img/cuerpo-mesa.jpg?v=14" alt="" width="1280" height="720"></span>
+          <div class="uni-copy"><h3>Manos y cuerpo</h3><p>Pequeños cuidados para disfrutar todos los días.</p><span class="text-link">Ver cuerpo</span></div>
+        </a>
       </div>
-    </section>
-  </div>
+      <div class="uni-consulta">
+        <h3>¿Necesitás ayuda para elegir?</h3>
+        <p>Recibí asesoramiento personalizado.</p>
+        <a class="text-link" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20necesito%20ayuda%20para%20elegir%20entre%20piel%2C%20maquillaje%2C%20fragancias%20o%20cuerpo." target="_blank" rel="noopener">Escribinos</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mes" id="mes" aria-labelledby="t-mes">
+    <div class="ancho">
+      <p class="folio"><span>Este mes</span></p>
+      <h2 id="t-mes">Favoritos del mes</h2>
+      <p class="lead">Novedades y promociones de esta temporada. Encontrá tus favoritos y pedí asesoramiento para elegir.</p>
+    </div>
+    <div class="mes-rail" id="destacados"></div>
+    <noscript>
+      <p class="ancho lead"><a class="text-link" href="./tocador.html#vitrina">Ver toda la vitrina de Skincare</a></p>
+    </noscript>
+    <div class="ancho mes-cta">
+      <a class="btn btn-sec" href="./tocador.html#vitrina">Explorá todos los productos</a>
+    </div>
+  </section>
+
+  <section class="antes" id="antes" aria-labelledby="t-antes">
+    <div class="ancho antes-layout">
+      <div>
+        <p class="folio"><span id="t-antes">Preguntas</span></p>
+        <h2>Todo lo que necesitás saber.</h2>
+        <p class="lead">Si tenés alguna otra duda, escribinos. Estamos para ayudarte a elegir la experiencia que mejor se adapte a vos.</p>
+        <a class="btn" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20tengo%20una%20consulta%20sobre%20la%20experiencia." target="_blank" rel="noopener">Hacer una consulta</a>
+      </div>
+      <div>
+        <p class="folio"><span>La experiencia</span></p>
+        <div class="acordeon" id="faq-experiencia">
+          <details>
+            <summary>¿Cómo reservo mi experiencia?</summary>
+            <p>Por WhatsApp. No hay un día fijo: coordinamos según tu disponibilidad.</p>
+          </details>
+          <details>
+            <summary>¿Cuánto dura cada encuentro?</summary>
+            <p>El facial dura 45 minutos. Con amigas, la experiencia va de una hora a una hora y media.</p>
+          </details>
+          <details open>
+            <summary>¿La experiencia es realmente gratuita?</summary>
+            <p>Sí. Podés conocer y probar los productos, recibir asesoramiento y decidir con calma. Te vas con una rutina y comprás solo si te gusta. No hay obligación de comprar.</p>
+          </details>
+          <details>
+            <summary>¿Puedo asistir con mi hija?</summary>
+            <p>Podés venir desde los 12 años. Si es menor, tiene que venir con la mamá o con una hermana mayor.</p>
+          </details>
+          <details>
+            <summary>¿Puedo recomendarle la experiencia a una amiga?</summary>
+            <p>Sí. También podés pedir con una foto o con el folleto, sin venir a la experiencia.</p>
+          </details>
+        </div>
+        <p class="faq-sigue"><a href="./tocador.html#compras">Preguntas sobre envíos y pagos</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="equipo" id="equipo" aria-labelledby="t-equipo">
+    <div class="sumate-grid">
+      <div class="sumate-oferta">
+        <h2 id="t-equipo">Emprendé a tu manera.</h2>
+        <p class="body">Una oportunidad para iniciar tu camino en la belleza. No necesitás experiencia previa para comenzar.</p>
+        <div class="kit">
+          <div>
+            <p class="folio"><span>Inversión inicial</span></p>
+            <p class="equipo-precio">$ 1.000</p>
+          </div>
+          <div>
+            <p class="folio"><span>Valor en productos</span></p>
+            <p class="kit-valor">$ 5.490</p>
+          </div>
+        </div>
+        <p class="body">Tu kit reúne los productos y materiales para dar los primeros pasos. Incluye el catálogo y dos folletos del mes.</p>
+        <a class="btn" href="https://wa.me/59899365404?text=%C2%A1Hola!%20Me%20interesa%20conocer%20la%20oportunidad%20de%20emprendimiento%20y%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20c%C3%B3mo%20empezar." target="_blank" rel="noopener">Quiero conocer la oportunidad</a>
+      </div>
+      <div class="sumate-video">
+        <p class="body">Conocé cómo dar los primeros pasos en la belleza.</p>
+        <div class="cine" id="sumate-cine">
+          <video id="sumate-video" class="sumate-film" poster="./img/sumate-video.jpg" muted playsinline preload="none" width="1600" height="900"></video>
+          <button type="button" class="sumate-play" id="sumate-play">Ver el video</button>
+          <div class="sumate-controls">
+            <button type="button" class="icon-btn is-off" id="sumate-toggle" aria-label="Reproducir el video"><svg class="ico-pausa" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14"></rect><rect x="14" y="5" width="4" height="14"></rect></svg><svg class="ico-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"></path></svg></button>
+            <input id="sumate-progreso" type="range" min="0" max="1000" value="0" aria-label="Avance del video" aria-valuemin="0" aria-valuemax="1000" aria-valuenow="0">
+            <span id="sumate-tiempo">3:37</span>
+            <button type="button" class="icon-btn" id="sumate-sonido" aria-pressed="false" aria-label="Activar el sonido"><svg class="ico-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h3l4-4v12l-4-4H4zM16 9l5 6M21 9l-5 6"></path></svg><svg class="ico-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h3l4-4v12l-4-4H4zM16 9a4 4 0 010 6M18.5 7a7 7 0 010 10"></path></svg></button>
+            <button type="button" class="icon-btn" id="sumate-full" aria-label="Pantalla completa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4H4v4M16 4h4v4M4 16v4h4M20 16v4h-4"></path></svg></button>
+          </div>
+        </div>
+      </div>
+      <ul class="sumate-beneficios">
+        <li><span class="bene-ico" data-ico="grad"></span><div><strong>Aprendé desde cero.</strong><span>Capacitación y talleres de maquillaje y de piel, sin costo.</span></div></li>
+        <li><span class="bene-ico" data-ico="cal"></span><div><strong>A tu propio ritmo.</strong><span>Sin obligación de hacer un pedido todos los meses.</span></div></li>
+        <li><span class="bene-ico" data-ico="users"></span><div><strong>Compartí experiencias.</strong><span>Encuentros individuales o con amigas.</span></div></li>
+        <li><span class="bene-ico" data-ico="msg"></span><div><strong>Elegí cómo vender.</strong><span>De forma presencial, por recomendación o por WhatsApp.</span></div></li>
+      </ul>
+    </div>
+  </section>
 </main>
 
 <div class="aviso-instalar" id="aviso-instalar" hidden>
-  <p>Dejala en el inicio.</p>
+  <p>Agregala al inicio del teléfono.</p>
   <div class="lado">
-    <button class="act" type="button" id="aviso-si"><span class="u">Instalar</span><span class="arr" aria-hidden="true">→</span></button>
+    <button class="act" type="button" id="aviso-si"><span class="u">Agregar</span><span class="arr" aria-hidden="true">→</span></button>
     <button class="aviso-no" type="button" id="aviso-no">Ahora no</button>
   </div>
 </div>
 
-<footer>
-  <div class="col">
-    <p class="kicker">Young · Río Negro</p>
-    <p class="lugares">También en Maldonado, Punta del Este y Paysandú.</p>
-    <p class="wm" aria-label="Belleza que Decide"><span>Belleza</span> <span class="wm-q">que</span> <span>Decide</span></p>
-    <a class="ig" href="https://instagram.com/silviag_marykay" target="_blank" rel="noopener">Instagram</a>
+<footer class="pie" id="cierre">
+  <div class="pie-grid">
+    <div class="pie-marca">
+      <p class="wm" aria-label="Belleza que Decide"><span>Belleza</span> <span class="wm-q">que</span> <span>Decide</span></p>
+      <p class="pie-linea">Belleza, cuidado personal y experiencias para compartir en Young.</p>
+      <a class="btn" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20coordinar%20una%20experiencia." target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    </div>
+    <nav class="pie-nav" aria-label="En el sitio">
+      <a href="./">Inicio</a>
+      <a href="./tocador.html">Skincare</a>
+      <a href="./novedades.html">Novedades</a>
+      <a href="#equipo">Sumate</a>
+    </nav>
+    <div class="pie-lado">
+      <p class="pie-kicker">Dónde</p>
+      <p><span data-ico="pin">Young · Río Negro</span></p>
+      <p class="lugares">También en Maldonado, Punta del Este y Paysandú.</p>
+      <a class="pie-ig" data-ico="ig" href="https://instagram.com/silviag_marykay" target="_blank" rel="noopener">Instagram</a>
+      <div class="pie-instalar" id="instalar">
+        <p>Llevá Belleza que Decide con vos. Agregala a la pantalla de inicio y entrá cuando quieras.</p>
+        <button class="btn btn-sec" type="button" id="btn-instalar">Agregar al inicio</button>
+      </div>
+    </div>
   </div>
 </footer>
 
@@ -179,11 +284,14 @@
     <li><a href="./" aria-current="page">Inicio</a></li>
     <li><a href="./tocador.html">Skincare</a></li>
     <li><a href="./novedades.html">Novedades</a></li>
-    <li><a class="wa" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20%C2%BFc%C3%B3mo%20est%C3%A1s%3F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg><span>WhatsApp</span></a></li>
+    <li><a class="wa" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20hacerte%20una%20consulta." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg><span>WhatsApp</span></a></li>
   </ul>
 </nav>
 
-<script src="./sitio.js?v=26"></script>
-
+<script src="./ofertas.js?v=31"></script>
+<script src="./iconos.js?v=35"></script>
+<script src="./motor.js?v=35"></script>
+<script src="./sitio.js?v=35"></script>
+<script src="./asistente.js?v=35"></script>
 </body>
 </html>

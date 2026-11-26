@@ -5,19 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f2e8e6">
 <title>Skincare · Belleza que Decide · Young</title>
-<meta name="description" content="Piel, color, perfume y cuerpo. La lectura de la piel es en el facial. Se pide por WhatsApp.">
+<meta name="description" content="Silvia Garbarino. Piel, maquillaje, fragancias y cuerpo en Young. Se miran en la página y se piden por WhatsApp.">
 <link rel="icon" href="./favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="./apple-touch-icon.png">
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./estilos.css?v=26">
+<link rel="stylesheet" href="./estilos.css?v=35">
 </head>
 <body>
 
 <header class="mast">
-  <nav class="mast-side mast-left" aria-label="Secciones">
+  <nav class="mast-pages" aria-label="Secciones">
     <ul>
       <li><a href="./">Inicio</a></li>
       <li><a href="./tocador.html" aria-current="page">Skincare</a></li>
@@ -25,173 +25,191 @@
     </ul>
   </nav>
   <a class="mast-mark" href="./" aria-label="Belleza que Decide"><span>Belleza</span><span class="wm-q">que</span><span>Decide</span></a>
-  <nav class="mast-side mast-right" aria-label="Más">
-    <ul>
-      <li><a href="./#equipo">Sumate</a></li>
-      <li><a href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20%C2%BFc%C3%B3mo%20est%C3%A1s%3F" target="_blank" rel="noopener">WhatsApp</a></li>
-    </ul>
-  </nav>
+  <div class="mast-tools">
+    <a class="mast-sumate" href="./#equipo">Sumate</a>
+    <a class="btn-wa mast-wa" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20hacerte%20una%20consulta." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
+      <span>WhatsApp</span>
+    </a>
+  </div>
 </header>
 
 <main>
   <section class="tocador" id="puertas" aria-labelledby="t-tocador">
     <div class="col">
       <p class="folio"><span>Skincare</span></p>
-      <h2 id="t-tocador">Para mirar de cerca</h2>
-      <p class="body">Piel, color, perfume y cuerpo. Se mira acá. Se pide por WhatsApp.</p>
+      <h2 id="t-tocador">Descubrí tus favoritos</h2>
+      <p class="body">Piel, maquillaje, fragancias y cuerpo. Miralos acá y pedí asesoramiento personalizado por WhatsApp.</p>
     </div>
 
-    <!-- Ofertas del mes. Para el mes que viene: cambiar la foto en img/ofertas y el nombre.
-         Cuando haya texto: data-sirve, data-lineas (separadas por |) y data-texto. -->
+    <!-- Ofertas del mes. Para el mes que viene: cambiar la foto y el nombre en ofertas.js.
+         Cuando haya texto: sirve, lineas (separadas por |) y texto, en ese mismo archivo. -->
     <section class="vitrina" id="vitrina" aria-labelledby="t-vitrina">
       <div class="ancho">
         <p class="folio"><span>Este mes</span></p>
-        <h2 id="t-vitrina">Lo que está <em>ahora.</em></h2>
+        <h2 id="t-vitrina">La selección de <em>este mes.</em></h2>
       </div>
       <div class="vitrina-rail" tabindex="0" aria-label="Ofertas de este mes">
-        <ul class="vitrina-track">
-          <li class="v-sep" aria-hidden="true"><span>Fragancias</span></li>
-          <li><button type="button" class="v-card" data-kicker="Fragancia"><figure><img src="./img/ofertas/velvet-scent.jpg?v=4" alt="Velvet Scent"></figure><span class="v-nombre">Velvet Scent</span></button></li>
-          <li><button type="button" class="v-card" data-kicker="Fragancia"><figure><img src="./img/ofertas/dream-fearlessly.jpg?v=4" alt="Dream Fearlessly"></figure><span class="v-nombre">Dream Fearlessly</span></button></li>
-          <li><button type="button" class="v-card" data-kicker="Fragancia"><figure><img src="./img/ofertas/love-fearlessly.jpg?v=4" alt="Love Fearlessly"></figure><span class="v-nombre">Love Fearlessly</span></button></li>
-          <li><button type="button" class="v-card" data-kicker="Fragancia"><figure><img src="./img/ofertas/joy-emotion.jpg?v=4" alt="Joy Emotion Scent"></figure><span class="v-nombre">Joy Emotion Scent</span></button></li>
-          <li><button type="button" class="v-card" data-kicker="Fragancia"><figure><img src="./img/ofertas/garden-scent.jpg?v=4" alt="Garden Scent"></figure><span class="v-nombre">Garden Scent</span></button></li>
-          <li><button type="button" class="v-card" data-kicker="Fragancia"><figure><img src="./img/ofertas/embrace-ella.jpg?v=4" alt="Embrace, para ella"></figure><span class="v-nombre">Embrace, para ella</span></button></li>
-          <li><button type="button" class="v-card" data-kicker="Fragancia"><figure><img src="./img/ofertas/embrace-el.jpg?v=4" alt="Embrace, para él"></figure><span class="v-nombre">Embrace, para él</span></button></li>
-          <li><button type="button" class="v-card" data-kicker="Fragancia"><figure><img src="./img/ofertas/authentic-hero.jpg?v=4" alt="Authentic Hero"></figure><span class="v-nombre">Authentic Hero</span></button></li>
-          <li><button type="button" class="v-card" data-kicker="Fragancia"><figure><img src="./img/ofertas/authentic-hero-style.jpg?v=4" alt="Authentic Hero Style"></figure><span class="v-nombre">Authentic Hero Style</span></button></li>
-          <li><button type="button" class="v-card" data-kicker="Fragancia"><figure><img src="./img/ofertas/authentic-hero-bold.jpg?v=4" alt="Authentic Hero Bold"></figure><span class="v-nombre">Authentic Hero Bold</span></button></li>
-          <li class="v-sep" aria-hidden="true"><span>Labios</span></li>
-          <li><button type="button" class="v-card" data-kicker="Labios"><figure><img src="./img/ofertas/labial-mate.jpg?v=4" alt="Labial líquido mate"></figure><span class="v-nombre">Labial líquido mate</span></button></li>
-          <li><button type="button" class="v-card" data-kicker="Labios"><figure><img src="./img/ofertas/brillo-labios.jpg?v=4" alt="Brillo de labios"></figure><span class="v-nombre">Brillo de labios</span></button></li>
-          <li><button type="button" class="v-card" data-kicker="Labios"><figure><img src="./img/ofertas/semi-shine.jpg?v=4" alt="Semi Shine"></figure><span class="v-nombre">Semi Shine</span></button></li>
-          <li><button type="button" class="v-card" data-kicker="Labios"><figure><img src="./img/ofertas/delineador-lapiz.jpg?v=4" alt="Delineador y lápiz"></figure><span class="v-nombre">Delineador y lápiz</span></button></li>
-          <li><button type="button" class="v-card" data-kicker="Labios"><figure><img src="./img/ofertas/semi-mate.jpg?v=4" alt="Semi Mate"></figure><span class="v-nombre">Semi Mate</span></button></li>
-          <li class="v-sep" aria-hidden="true"><span>Piel</span></li>
-          <li><button type="button" class="v-card" data-kicker="Piel"><figure><img src="./img/ofertas/timewise-repair.jpg?v=4" alt="TimeWise Repair"></figure><span class="v-nombre">TimeWise Repair</span></button></li>
-          <li><button type="button" class="v-card" data-kicker="Piel"><figure><img src="./img/ofertas/rutina-caja.jpg?v=4" alt="La rutina en una caja"></figure><span class="v-nombre">La rutina en una caja</span></button></li>
-          <li><button type="button" class="v-card" data-kicker="Regalo"><figure><img src="./img/ofertas/regalos.jpg?v=4" alt="Los regalos"></figure><span class="v-nombre">Los regalos</span></button></li>
+        <ul class="vitrina-track" id="vitrina-track" aria-label="Afiches de este mes">
         </ul>
       </div>
       <div class="vitrina-puntos" id="vitrina-puntos"></div>
     </section>
 
     <ul class="puertas">
-      <li><a href="#piel"><figure><img src="./img/piel-mesa.jpg?v=14" alt="Rutina de piel, sin marca" width="1280" height="720"></figure><strong>Piel</strong><em>Brilla o tira</em></a></li>
-      <li><a href="#color"><figure><img src="./img/color-labios.jpg?v=14" alt="Tres labiales sin marca" width="864" height="1152"></figure><strong>Color</strong><em>El labial del mes</em></a></li>
-      <li><a href="#perfume"><figure><img src="./img/perfume-frasco.jpg?v=14" alt="Perfume sin marca" width="864" height="1152"></figure><strong>Perfume</strong><em>Por familia</em></a></li>
-      <li><a href="#cuerpo"><figure><img src="./img/cuerpo-mesa.jpg?v=14" alt="Loción y crema de manos, sin marca" width="1280" height="720"></figure><strong>Cuerpo</strong><em>Poco, y bien</em></a></li>
+      <li><a href="#piel"><figure><img src="./img/piel-mesa.jpg?v=14" alt="Frascos de una rutina de piel sobre una mesa clara" width="1280" height="720"></figure><strong>Piel</strong><em>¿Brilla o tira?</em></a></li>
+      <li><a href="#color"><figure><img src="./img/color-labios.jpg?v=14" alt="Tres labiales en tonos nude, rosa y rojo" width="864" height="1152"></figure><strong>Maquillaje</strong><em>Tres tonos</em></a></li>
+      <li><a href="#perfume"><figure><img src="./img/perfume-frasco.jpg?v=14" alt="Frasco de perfume sobre una superficie clara" width="864" height="1152"></figure><strong>Fragancias</strong><em>Por familia</em></a></li>
+      <li><a href="#cuerpo"><figure><img src="./img/cuerpo-mesa.jpg?v=14" alt="Loción corporal y crema de manos sobre una mesa" width="1280" height="720"></figure><strong>Manos y cuerpo</strong><em>Para cuidar de vos</em></a></li>
     </ul>
   </section>
 
   <div class="casa">
     <nav class="indice" aria-label="Categorías">
       <a href="#piel">Piel</a>
-      <a href="#color">Color</a>
-      <a href="#perfume">Perfume</a>
+      <a href="#color">Maquillaje</a>
+      <a href="#perfume">Fragancias</a>
       <a href="#cuerpo">Cuerpo</a>
     </nav>
     <div>
       <div class="banda" id="piel">
-        <figure class="shot"><img src="./img/piel-mesa.jpg?v=14" alt="Rutina de piel, sin marca" width="1280" height="720" loading="lazy"></figure>
+        <figure class="shot"><img src="./img/piel-mesa.jpg?v=14" alt="Frascos de una rutina de piel sobre una mesa clara" width="1280" height="720" loading="lazy"></figure>
         <div class="copy">
-          <a class="volver" href="#puertas">Volver</a>
+          <a class="volver" href="#puertas">Volver a las categorías</a>
           <h3>Piel</h3>
-          <p class="body">La lectura de verdad es en el facial. Acá, una guía: dos caminos, y cuatro pasos.</p>
+          <p class="body">La recomendación precisa se hace en el facial. Acá tenés una guía para orientarte: dos caminos y cuatro pasos.</p>
           <div class="pregunta">
             <p>¿Tu piel brilla o tira?</p>
             <div class="opciones">
-              <a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20mi%20piel%20brilla.%20Quiero%20la%20rutina%20que%20matifica." target="_blank" rel="noopener"><span class="u">Brilla</span><span class="arr" aria-hidden="true">→</span></a>
-              <a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20mi%20piel%20tira.%20Quiero%20la%20rutina%20que%20hidrata." target="_blank" rel="noopener"><span class="u">Tira</span><span class="arr" aria-hidden="true">→</span></a>
+              <a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20mi%20piel%20brilla.%20Quiero%20la%20rutina%20que%20matifica." target="_blank" rel="noopener"><span class="u">Mi piel brilla</span><span class="arr" aria-hidden="true">→</span></a>
+              <a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20mi%20piel%20tira.%20Quiero%20la%20rutina%20que%20hidrata." target="_blank" rel="noopener"><span class="u">Mi piel tira</span><span class="arr" aria-hidden="true">→</span></a>
             </div>
           </div>
           <div class="dos">
             <article>
-              <figure><img src="./img/piel-matifica.jpg?v=14" alt="Gel matificante, sin marca" width="1024" height="1024" loading="lazy"></figure>
+              <figure><img src="./img/piel-matifica.jpg?v=14" alt="Gel para pieles que brillan" width="1024" height="1024" loading="lazy"></figure>
               <h3>Matifica</h3>
-              <p>Para mixta a grasa. Baja el brillo.</p>
-              <span class="fit">No es para una piel muy seca.</span>
+              <p>Para piel mixta a grasa. Está pensada para bajar el brillo.</p>
+              <span class="fit">No está indicada para una piel muy seca.</span>
             </article>
             <article>
-              <figure><img src="./img/piel-hidrata.jpg?v=14" alt="Crema hidratante, sin marca" width="1024" height="1024" loading="lazy"></figure>
+              <figure><img src="./img/piel-hidrata.jpg?v=14" alt="Crema hidratante en un frasco abierto" width="1024" height="1024" loading="lazy"></figure>
               <h3>Hidrata</h3>
-              <p>Para normal a seca. Suave, sin tirantez.</p>
-              <span class="fit">Si la zona T brilla mucho, el otro camino.</span>
+              <p>Para piel normal a seca. Queda suave, sin tirantez.</p>
+              <span class="fit">Si la zona T brilla mucho, conviene el otro camino.</span>
             </article>
           </div>
           <ol class="pasos">
-            <li><span class="n">1</span><div><strong>Limpia</strong><span>Saca el día. Según el camino.</span></div></li>
+            <li><span class="n">1</span><div><strong>Limpia</strong><span>Saca lo que quedó del día, según el camino que elijas.</span></div></li>
             <li><span class="n">2</span><div><strong>Exfolia</strong><span>Dos o tres veces por semana.</span></div></li>
-            <li><span class="n">3</span><div><strong>Tonifica</strong><span>Equilibra antes de la crema.</span></div></li>
-            <li><span class="n">4</span><div><strong>Hidrata</strong><span>La crema del camino. El óleo, al final.</span></div></li>
+            <li><span class="n">3</span><div><strong>Tonifica</strong><span>Equilibra la piel antes de la crema.</span></div></li>
+            <li><span class="n">4</span><div><strong>Hidrata</strong><span>Aplicá la crema del camino. El óleo va al final.</span></div></li>
           </ol>
         </div>
       </div>
 
       <div class="banda flip" id="color">
         <figure class="deseo-frame">
-          <img src="./img/labial-poster.jpg?v=18" alt="Labial abierto, sin marca" width="720" height="1280">
+          <img src="./img/labial-poster.jpg?v=18" alt="Labial abierto" width="720" height="1280">
           <video class="labial-film" muted loop playsinline preload="none" aria-hidden="true"></video>
+          <button type="button" class="hero-pausa" id="labial-pausa" aria-label="Pausar el video"><svg class="ico-pausa" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14"></rect><rect x="14" y="5" width="4" height="14"></rect></svg><svg class="ico-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"></path></svg></button>
         </figure>
         <div class="copy">
-          <a class="volver" href="#puertas">Volver</a>
-          <h3>Color</h3>
-          <p class="body">Labios primero. Hidratante, con brillo, mate o líquido. En la página, tres tonos. El resto, por mensaje.</p>
+          <a class="volver" href="#puertas">Volver a las categorías</a>
+          <h3>Maquillaje</h3>
+          <p class="body">Empezamos por los labios: hidratante, con brillo, mate o líquido. En la página hay tres tonos: nude, rosa y rojo. También hay base, corrector, delineador y máscara. El resto se pide por mensaje.</p>
           <ul class="swatches" aria-label="Tonos">
             <li><i style="background:#c9a394"></i> Nude</li>
             <li><i style="background:#d07a8c"></i> Rosa</li>
             <li><i style="background:#9d2032"></i> Rojo</li>
           </ul>
-          <p class="body">Rostro y ojos también: base, corrector, delineador, máscara. Se arma un look, no un listado.</p>
-          <a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20el%20encuentro%20de%20maquillaje." target="_blank" rel="noopener"><span class="u">Quiero el encuentro de maquillaje</span><span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20coordinar%20el%20encuentro%20de%20maquillaje." target="_blank" rel="noopener">Reservar por WhatsApp</a>
         </div>
       </div>
 
       <div class="banda" id="perfume">
-        <figure class="portrait"><img src="./img/perfume-frasco.jpg?v=14" alt="Perfume sin marca" width="864" height="1152" loading="lazy"></figure>
+        <figure class="portrait"><img src="./img/perfume-frasco.jpg?v=14" alt="Frasco de perfume sobre una superficie clara" width="864" height="1152" loading="lazy"></figure>
         <div class="copy">
-          <a class="volver" href="#puertas">Volver</a>
-          <h3>Perfume</h3>
-          <p class="body">Por familia, no por colección. Decí cómo querés oler.</p>
+          <a class="volver" href="#puertas">Volver a las categorías</a>
+          <h3>Fragancias</h3>
+          <p class="body">Encontrá un aroma que se parezca a lo que querés usar. Se elige por familia.</p>
           <ul class="familias">
-            <li><i style="background:#f3b7c7"></i><div><strong>Frutal</strong><span>Fresca, de día.</span></div></li>
+            <li><i style="background:#f3b7c7"></i><div><strong>Frutal</strong><span>Fresca, para el día.</span></div></li>
             <li><i style="background:#cbb6d9"></i><div><strong>Floral</strong><span>La más clásica.</span></div></li>
-            <li><i style="background:#e8b29a"></i><div><strong>Chipre</strong><span>Cítrica, elegante.</span></div></li>
-            <li><i style="background:#cfc9c3"></i><div><strong>Fougère</strong><span>Hierba.</span></div></li>
-            <li><i style="background:#b45a5a"></i><div><strong>Oriental</strong><span>Ámbar, de noche.</span></div></li>
-            <li><i style="background:#a89078"></i><div><strong>Amaderado</strong><span>Carácter fuerte.</span></div></li>
+            <li><i style="background:#e8b29a"></i><div><strong>Chipre</strong><span>Cítrica y elegante.</span></div></li>
+            <li><i style="background:#cfc9c3"></i><div><strong>Fougère</strong><span>Aroma a hierba.</span></div></li>
+            <li><i style="background:#b45a5a"></i><div><strong>Oriental</strong><span>Ámbar, para la noche.</span></div></li>
+            <li><i style="background:#a89078"></i><div><strong>Amaderado</strong><span>De carácter fuerte.</span></div></li>
           </ul>
-          <a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20el%20encuentro%20de%20fragancias." target="_blank" rel="noopener"><span class="u">Quiero el encuentro de fragancias</span><span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20coordinar%20el%20encuentro%20de%20fragancias." target="_blank" rel="noopener">Reservar por WhatsApp</a>
         </div>
       </div>
 
       <div class="banda flip" id="cuerpo">
-        <figure class="shot"><img src="./img/cuerpo-mesa.jpg?v=14" alt="Loción y crema de manos, sin marca" width="1280" height="720" loading="lazy"></figure>
+        <figure class="shot"><img src="./img/cuerpo-mesa.jpg?v=14" alt="Loción corporal y crema de manos sobre una mesa" width="1280" height="720" loading="lazy"></figure>
         <div class="copy">
-          <a class="volver" href="#puertas">Volver</a>
-          <h3>Cuerpo</h3>
-          <p class="body">Loción para el cuerpo, crema de manos, y el cuidado de labios antes del color. Poco, y bien.</p>
-          <a class="act" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20el%20encuentro%20de%20manos%20y%20cuerpo." target="_blank" rel="noopener"><span class="u">Quiero el encuentro de manos y cuerpo</span><span class="arr" aria-hidden="true">→</span></a>
+          <a class="volver" href="#puertas">Volver a las categorías</a>
+          <h3>Manos y cuerpo</h3>
+          <p class="body">Loción para el cuerpo, crema de manos y el cuidado de los labios antes de aplicar color. Pocos productos, bien elegidos.</p>
+          <a class="btn" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20coordinar%20el%20encuentro%20de%20manos%20y%20cuerpo." target="_blank" rel="noopener">Reservar por WhatsApp</a>
         </div>
       </div>
     </div>
   </div>
 </main>
 
+<section class="antes" id="compras" aria-labelledby="t-compras">
+  <div class="ancho">
+    <p class="folio"><span id="t-compras">Las compras</span></p>
+    <h2>Si pedís un producto.</h2>
+    <div class="acordeon">
+      <details>
+        <summary>¿Realizan envíos a todo Uruguay?</summary>
+        <p>Podés retirar en la oficina, coordinar que ella lo lleve, o pedir envío a todo el país. Desde 2.000 pesos, el envío no se cobra.</p>
+      </details>
+      <details>
+        <summary>¿Cómo puedo pagar mis productos?</summary>
+        <p>Con tarjeta, transferencia o depósito.</p>
+      </details>
+      <details>
+        <summary>¿Qué pasa si tengo un problema con un producto?</summary>
+        <p>Si el frasco se rompe o el producto no sale, la empresa lo cambia por otro.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <div class="aviso-instalar" id="aviso-instalar" hidden>
-  <p>Dejala en el inicio.</p>
+  <p>Agregala al inicio del teléfono.</p>
   <div class="lado">
-    <button class="act" type="button" id="aviso-si"><span class="u">Instalar</span><span class="arr" aria-hidden="true">→</span></button>
+    <button class="act" type="button" id="aviso-si"><span class="u">Agregar</span><span class="arr" aria-hidden="true">→</span></button>
     <button class="aviso-no" type="button" id="aviso-no">Ahora no</button>
   </div>
 </div>
 
-<footer>
-  <div class="col">
-    <p class="kicker">Young · Río Negro</p>
-    <p class="lugares">También en Maldonado, Punta del Este y Paysandú.</p>
-    <p class="wm" aria-label="Belleza que Decide"><span>Belleza</span> <span class="wm-q">que</span> <span>Decide</span></p>
-    <a class="ig" href="https://instagram.com/silviag_marykay" target="_blank" rel="noopener">Instagram</a>
+<footer class="pie">
+  <div class="pie-grid">
+    <div class="pie-marca">
+      <p class="wm" aria-label="Belleza que Decide"><span>Belleza</span> <span class="wm-q">que</span> <span>Decide</span></p>
+      <p class="pie-linea">Belleza, cuidado personal y experiencias para compartir en Young.</p>
+      <a class="btn" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20coordinar%20una%20experiencia." target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    </div>
+    <nav class="pie-nav" aria-label="En el sitio">
+      <a href="./">Inicio</a>
+      <a href="./tocador.html">Skincare</a>
+      <a href="./novedades.html">Novedades</a>
+      <a href="./#equipo">Sumate</a>
+    </nav>
+    <div class="pie-lado">
+      <p class="pie-kicker">Dónde</p>
+      <p>Young · Río Negro</p>
+      <p class="lugares">También en Maldonado, Punta del Este y Paysandú.</p>
+      <a class="pie-ig" href="https://instagram.com/silviag_marykay" target="_blank" rel="noopener">Instagram</a>
+      <div class="pie-instalar" id="instalar">
+        <p>Llevá Belleza que Decide con vos. Agregala a la pantalla de inicio y entrá cuando quieras.</p>
+        <button class="btn btn-sec" type="button" id="btn-instalar">Agregar al inicio</button>
+      </div>
+    </div>
   </div>
 </footer>
 
@@ -200,7 +218,7 @@
     <li><a href="./">Inicio</a></li>
     <li><a href="./tocador.html" aria-current="page">Skincare</a></li>
     <li><a href="./novedades.html">Novedades</a></li>
-    <li><a class="wa" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20%C2%BFc%C3%B3mo%20est%C3%A1s%3F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg><span>WhatsApp</span></a></li>
+    <li><a class="wa" href="https://wa.me/59899365404?text=Hola%20Silvia%2C%20quiero%20hacerte%20una%20consulta." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg><span>WhatsApp</span></a></li>
   </ul>
 </nav>
 
@@ -222,11 +240,20 @@
       <p class="ficha-etiq" id="ficha-etiq-lineas" hidden>Características</p>
       <ul class="ficha-lineas" id="ficha-lineas" hidden></ul>
       <p class="body" id="ficha-texto" hidden></p>
-      <a class="act" id="ficha-wa" target="_blank" rel="noopener"><span class="u">Quiero este</span><span class="arr" aria-hidden="true">→</span></a>
+      <p class="body" id="ficha-vacio" hidden>Mirá el afiche completo. Si te interesa, consultanos por WhatsApp.</p>
+      <div class="ficha-acciones">
+        <a class="btn" id="ficha-wa" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+        <button type="button" class="btn btn-sec" id="ficha-compartir">Compartir</button>
+        <button type="button" class="text-link" id="ficha-guia">Preguntale a la guía</button>
+      </div>
     </div>
   </div>
 </dialog>
 
-<script src="./sitio.js?v=26"></script>
+<script src="./ofertas.js?v=31"></script>
+<script src="./iconos.js?v=35"></script>
+<script src="./motor.js?v=35"></script>
+<script src="./sitio.js?v=35"></script>
+<script src="./asistente.js?v=35"></script>
 </body>
 </html>
